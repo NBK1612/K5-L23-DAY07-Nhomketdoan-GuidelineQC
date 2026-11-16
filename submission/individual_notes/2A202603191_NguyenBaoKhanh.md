@@ -26,8 +26,9 @@ So bản cá nhân `guideline_2A202603191_NguyenBaoKhanh.md` với kết quả n
 
 ## 3. Pha 3: ảnh tôi đã gán
 - Số ảnh được giao: **24** (`submission/qc/assignments/2A202603191.txt`: img_001, 003, 004, 006, 008, 010, 012, 013, 015, 016, 019, 020, 021, 022, 025, 026, 029, 030, 031, 033, 035, 036, 038, 039)
-- Số box đã vẽ: chưa cập nhật · Số lần tick `can_review`: chưa cập nhật
-- Ca lưỡng lự nhất khi gán: chưa cập nhật (điền sau khi gán xong)
+- Số box đã vẽ: **190** (person 66, car 53, motorcycle 35, ignore_region 13, bicycle 11, three_wheeler 6, truck 3, bus 2, van 1) · Số lần tick `can_review`: **0**
+- File nhãn: `submission/labels/2A202603191_NguyenBaoKhanh.json`, `validate_labels.py` báo hợp lệ, đủ 24 ảnh.
+- Ca lưỡng lự nhất khi gán: **img_038** (tủ kính xe mô hình). Theo v1.0 lúc đầu, đồ chơi thu nhỏ không gán; tôi cho rằng mô hình nên học nhận ra hình xe nhưng biết xe đó không chạy được, nên gán 25 xe mô hình là `car` + `drivable=no` và đề xuất nhóm mở rộng R-14 cho cả đồ chơi. Nhóm đã cập nhật quy tắc này trong v1.0.
 
 ## 4. Pha 4–5: tôi lệch ở đâu
 - Chưa có `calibration_candidates.csv` (chưa chạy `qc_compare.py`). Cập nhật sau Pha 4.
