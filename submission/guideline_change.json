@@ -1,0 +1,4 @@
+{
+  "kind": "semantic",
+  "summary": "v1.1 thêm R-15 (cách ước lượng occluded_level, phân vân chọn mức thấp hơn) làm đổi cách chọn thuộc tính nên kiểm lại cả lô; R-16 làm rõ ngưỡng truncated; R-17 nhắc person luôn drivable=yes. Không đổi lớp hay taxonomy."
+}
