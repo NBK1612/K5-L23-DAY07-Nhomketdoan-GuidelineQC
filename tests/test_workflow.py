@@ -71,6 +71,15 @@ class WorkflowTest(unittest.TestCase):
             ],
         }
         data["annotations"].extend(additional or [])
+        # Bổ sung thuộc tính còn thiếu theo giá trị mặc định của taxonomy đang dùng,
+        # để dữ liệu giả hợp lệ cả khi nhóm thêm thuộc tính mới (vd drivable ở v1.0).
+        taxonomy = json.loads(self.tax.read_text(encoding="utf-8"))
+        defaults = {attr["name"]: attr["default"] for attr in taxonomy["attributes"]}
+        ignore_ids = {c["id"] for c in data["categories"] if c["name"] == taxonomy["ignore_class"]}
+        for annotation in data["annotations"]:
+            if annotation.get("category_id") not in ignore_ids and isinstance(annotation.get("attributes"), dict):
+                for name, value in defaults.items():
+                    annotation["attributes"].setdefault(name, value)
         self.write_json(path, data)
 
     def assignments(self, members="101|102"):

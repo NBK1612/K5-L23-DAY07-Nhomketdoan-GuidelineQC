@@ -42,4 +42,5 @@
 
 - `scripts/make_cvat_labels.py`: thêm `"type": "rectangle"` cho mỗi nhãn và `values: ["false"]` cho thuộc tính checkbox, vì CVAT 2.74.1 báo lỗi `unknown label type "undefined"` và `attribute values must be a non-empty array`.
 - `scripts/common.py`, `validate_labels.py`, `split_assign.py`, `check_submission.py`: nhận mã thành viên là MSHV (ví dụ 2A202603191) và tên file `<MSHV>_<HoTen>` theo yêu cầu của giáo viên, thay cho mã ba chữ số; vẫn nhận mã ba chữ số. Unittest 20/20 OK với taxonomy gốc.
+- `tests/test_workflow.py`: dữ liệu giả trong test chỉ có 3 thuộc tính của taxonomy v0, nên với taxonomy v1.0 (thêm `drivable`) 16/20 test báo thiếu thuộc tính. Sửa hàm tạo dữ liệu giả để tự điền thuộc tính còn thiếu theo giá trị mặc định của taxonomy đang dùng; không đổi phép kiểm tra. Kết quả 20/20 OK với cả taxonomy v0 và v1.0.
 - Lỗi môi trường: trên Windows phải đặt `PYTHONUTF8=1` để đọc file UTF-8; không sửa code cho việc này.
