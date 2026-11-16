@@ -8,7 +8,7 @@
 | STT | MSHV | Họ và tên | Lớp (L2 / L3 / khác) | Tài khoản GitHub |
 |---|---|---|---|---|
 | 1 | 2A202603191 | Nguyễn Bảo Khánh | L2 | NBK1612 |
-| 2 | 2A202603103 | Lê Ngọc Dũng | L2 | |
+| 2 | 2A202603103 | Lê Ngọc Dũng | L2 | | bachdungbiu3010-art
 | 3 | 2A202603201 | Bùi Quang Huy | L2 | |
 | 4 | 2A202603245 | Nguyễn Sỹ Kiên | L2 | |
 | 5 | 2A202603101 | Nguyễn Xuân Anh | L2 | Xanh21807 |
@@ -20,9 +20,9 @@ Danh sách trên phải khớp dòng tiêu đề của `README.md` (đã đổi 
 | MSHV | Phụ trách thêm |
 |---|---|
 | 2A202603191 | Khởi tạo repo, chạy split_assign chia ảnh |
-| 2A202603103 | |
-| 2A202603201 | |
-| 2A202603245 | |
+| 2A202603103 | | Kiểm tra độ đồng thuận giữa các thành viên, ghi nhận các trường hợp bất đồng để Calibration
+| 2A202603201 | | 
+| 2A202603245 | | 
 | 2A202603101 | Khảo sát 40 ảnh, đề xuất mở rộng taxonomy và phân tích ca khó |
 
 ## Kết quả tóm tắt (điền cuối bài)
