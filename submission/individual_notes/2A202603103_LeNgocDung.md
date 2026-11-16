@@ -22,11 +22,11 @@
 
 | Chủ đề cần đối chiếu | Quan điểm ban đầu của tôi | Câu hỏi nhóm phải chốt | Kết quả thực tế |
 |---|---|---|---|
-| Tuk-tuk | Ưu tiên class riêng nếu được phê duyệt; không ép vào class khác khi thiếu quy tắc. | Có cho bổ sung `three_wheeler` không? Nếu không, ánh xạ vào class nào hay bỏ qua? | **Chưa cập nhật** |
-| Xe chở ô tô | Phân biệt phương tiện chở và từng xe được chở; gán riêng nếu hợp lệ. | Quy tắc xe chuyên chở, rơ-moóc, mức độ nhìn thấy tối thiểu và box phần bị che là gì? | **Chưa cập nhật** |
-| Tượng / ma-nơ-canh | Không gán như người hay xe thật. | Các bản sao, tượng, đồ chơi, hình in, phản chiếu có bị loại trừ hết không? | **Chưa cập nhật** |
+| Tuk-tuk | Ưu tiên class riêng nếu được phê duyệt; không ép vào class khác khi thiếu quy tắc. | Có cho bổ sung `three_wheeler` không? Nếu không, ánh xạ vào class nào hay bỏ qua? | Nhóm chốt `three_wheeler` gồm tuk-tuk, auto-rickshaw, xích lô (v1.0, quyết định #1, #2) |
+| Xe chở ô tô | Phân biệt phương tiện chở và từng xe được chở; gán riêng nếu hợp lệ. | Quy tắc xe chuyên chở, rơ-moóc, mức độ nhìn thấy tối thiểu và box phần bị che là gì? | Một box `truck` cho đầu kéo + rơ-moóc, mỗi ô tô được chở một box `car` (R-08) |
+| Tượng / ma-nơ-canh | Không gán như người hay xe thật. | Các bản sao, tượng, đồ chơi, hình in, phản chiếu có bị loại trừ hết không? | Tượng người, ma-nơ-canh, hình in, phản chiếu không gán (R-05, R-06); vật hình xe không chạy được, kể cả đồ chơi, gán lớp xe + `drivable=no` (R-14) |
 
-**Tôi đồng ý / chưa đồng ý vì sao:** Chưa thể ghi nhận khi chưa có quyết định nhóm. Khi thảo luận xong, tôi sẽ ghi quyết định cuối, người xác nhận và lý do thay vì chỉ ghi “nhóm đã thống nhất”.
+**Tôi đồng ý / chưa đồng ý vì sao:** Đồng ý các kết quả trên; chi tiết từng điểm ở bảng "Kết quả nhóm chốt" bên dưới. Khi thảo luận xong, tôi sẽ ghi quyết định cuối, người xác nhận và lý do thay vì chỉ ghi “nhóm đã thống nhất”.
 
 ### Kết quả nhóm chốt (cập nhật sau họp Pha 2)
 
@@ -43,27 +43,20 @@ So bản cá nhân với kết quả nhóm chốt trong `guideline_v1.0_agreed.m
 
 ## 3. Pha 3: ảnh tôi đã gán
 
-- **Số ảnh được giao:** Chưa cập nhật.
-- **Số ảnh đã hoàn thành:** Chưa cập nhật.
-- **Số box đã vẽ:** Chưa cập nhật.
-- **Số lần đánh dấu `can_review`:** Chưa cập nhật (nếu CVAT không có thuộc tính này, ghi số ca đưa vào danh sách review riêng).
-
-**Ca tôi dự kiến phải kiểm tra kỹ nhất:** `img_002` — xe tải chở nhiều ô tô. Tôi cần phân biệt box cho xe chở, box từng xe con, phần bị khuất bởi khung vận chuyển và nguy cơ bỏ sót xe nằm ở tầng trên. Đây mới là **dự kiến**, không phải ca tôi đã thực sự lưỡng lự khi gán.
-
-**Sau khi gán xong, tôi sẽ điền:** `[ID ảnh thực tế] – [Tôi lưỡng lự ở đâu] – [Tôi đã gán thế nào] – [Tôi có đánh dấu review không]`.
+- Số ảnh được giao: **24** (`submission/qc/assignments/2A202603103.txt`); file nhãn `submission/labels/2A202603103_LeNgocDung.json`, `validate_labels.py` báo hợp lệ, đủ 24 ảnh.
+- Số box đã vẽ: **260** (person 115, motorcycle 65, car 41, ignore_region 11, bus 9, bicycle 8, truck 6, three_wheeler 5) · Số lần tick `can_review`: **3**
+- Ca lưỡng lự nhất khi gán: **img_013.jpg** (ảnh tôi tick `can_review` nhiều nhất: 2 box).
 
 ## 4. Pha 4–5: tôi lệch ở đâu
 
-**Tệp đối chiếu:** `calibration_candidates.csv` — **chưa được cung cấp**, nên tôi chưa xác định được ca nào có tên mình và nguyên nhân sai khác thực tế.
-
-Tôi sẽ phân loại bất đồng theo hai nguyên nhân:
-
-1. **Guideline mơ hồ / thiếu quy tắc:** Ví dụ không có class dành cho tuk-tuk, chưa quy định tượng và ma-nơ-canh, hoặc chưa chốt cách vẽ box khi bị che.
-2. **Tôi áp dụng sai quy tắc đã có:** Ví dụ guideline đã quy định rõ nhưng tôi chọn nhầm class, bỏ sót box hoặc không đánh dấu review.
-
-**Quyết định calibration tôi cho là quan trọng nhất (đề xuất trước buổi họp):** Thống nhất cách xử lý tuk-tuk và những đối tượng trông giống vật thật nhưng không phải vật thật. Hai tình huống này làm thay đổi trực tiếp tập đối tượng được gán và kết quả đo đồng thuận.
-
-**Cần cập nhật từ dữ liệu thực:** `[ID ảnh] – [Quy tắc gốc] – [Tôi đã làm] – [Người khác đã làm] – [Nguyên nhân lệch] – [Quyết định calibration]`.
+- Số ca trong `calibration_candidates.csv` có tên tôi: **663** (bỏ sót/thừa 172, lệch occluded_level 167, bất đồng ignore 122, IoU thấp 117, lệch truncated 38, sai lớp 26, lệch drivable 18, can_review 3).
+- Đồng thuận của tôi với các bạn (gộp các cặp có tôi, 340 cặp box ghép): IoU TB 0.838, cùng lớp 92.4%, cùng `occluded_level` 50.9%.
+- Ảnh tôi lệch nhiều nhất: img_006.jpg (85 ca), img_003.jpg (80 ca), img_032.jpg (77 ca).
+- Nguyên nhân:
+  - lệch `occluded_level` (167 ca) và bất đồng vùng ignore (122 ca): **guideline mơ hồ**, cả nhóm cùng lệch vì ước lượng % che và ranh giới vùng dày bằng mắt; v1.1 thêm R-15 để chốt cách ước lượng
+  - lệch `drivable` (18 ca): chủ yếu do quy tắc đồ chơi/xe không chạy được (R-14) và lỗi `person` của một người khác
+  - bỏ sót/thừa (172 ca) và IoU thấp (117 ca): mỗi người dừng vẽ ở ngưỡng vật nhỏ khác nhau và ôm box chưa đều (R-01, R-03)
+- Quyết định calibration quan trọng nhất với tôi: R-15 (cách ước lượng `occluded_level`, phân vân chọn mức thấp hơn), vì đây là nhóm ca lệch nhiều nhất (427 ca toàn nhóm).
 
 ## 5. Dùng AI
 

@@ -1,14 +1,14 @@
 # Guideline gán nhãn — v0.2 cá nhân — 2A202603103 - Lê Ngọc Dũng
 
-- Phiên bản: v0.2 cá nhân — bản đề xuất có bảng rà soát 40 ảnh, để người viết kiểm tra trước Pha 2.
+- Phiên bản: v0.2 cá nhân (Pha 1), có bảng ca khó cho đủ 40 ảnh.
 - Ngày: 16/11/2026.
-- Người viết: 2A202603103 - Lê Ngọc Dũng; Codex hỗ trợ soạn nội dung và xem 40 ảnh theo yêu cầu; học viên cần rà soát, xác nhận quyết định trước khi sử dụng.
-- Người duyệt: Chưa duyệt.
+- Người viết: 2A202603103 - Lê Ngọc Dũng. Công cụ hỗ trợ: Codex (soạn nội dung, xem 40 ảnh và đề xuất quyết định cho bảng ca khó); người viết chịu trách nhiệm các quyết định trong bản này.
+- Người duyệt: không áp dụng (bản cá nhân Pha 1; bản nhóm là `guideline_v1.0_agreed.md`).
 - Công cụ: CVAT; nhãn bounding box; xuất COCO 1.0.
 - Dữ liệu: 40 ảnh trong `data/images/`.
 - Căn cứ: `guideline/TEMPLATE_guideline.md`, `guideline/guideline_v0_starter.md`, `GUIDE.md`, `RULES.md`, `docs/QC_CHEATSHEET.md`, `submission/taxonomy.json` hiện ở phiên bản `v0`.
 
-> Đây là bản đề xuất cá nhân, chưa phải guideline thống nhất hoặc kết quả calibration. Ngưỡng QC ở mục 5 lấy từ đề bài. Ngưỡng che khuất và quy tắc diễn giải ở mục 2–3 là đề xuất cần người viết xác nhận và mang ra họp Pha 2. Bảng mục 4 do Codex hỗ trợ phân tích trực tiếp ảnh gốc theo yêu cầu, không phải xác nhận học viên đã tự quan sát hoặc nhóm đã chốt. Chưa tạo nhãn hay đo QC.
+> Đây là bản đề xuất cá nhân Pha 1, chưa phải guideline thống nhất. Ngưỡng QC ở mục 5 lấy từ đề bài; ngưỡng che khuất và quy tắc ở mục 2–3 là đề xuất cá nhân mang ra họp Pha 2. Bảng ca khó ở mục 4 soạn với hỗ trợ của Codex (xem ảnh gốc và đề xuất quyết định).
 
 ## 1. Mục tiêu
 
@@ -92,7 +92,7 @@ Các quy tắc dưới là đề xuất cá nhân để chốt ở Pha 2. Khi b�
 
 ## 4. Ca khó
 
-Bảng dưới được Codex hỗ trợ rà soát trực tiếp đủ 40 ảnh trong `data/images/` theo yêu cầu của học viên. Đây là các **quyết định đề xuất để học viên kiểm tra và đem ra Pha 2**, không phải nhãn đã gán, kết quả calibration hay bằng chứng học viên đã tự làm độc lập. Các tên lớp mới chỉ có hiệu lực khi nhóm phê duyệt. Với ảnh có nhiều vật, mô tả tập trung vào điểm dễ gây bất đồng, không thay thế việc kiểm toàn bộ ảnh khi gán.
+Bảng dưới gồm đủ 40 ảnh trong `data/images/`, soạn với hỗ trợ của Codex. Đây là **quyết định đề xuất ở Pha 1** để đem ra họp Pha 2, không phải nhãn đã gán hay kết quả calibration. Các lớp mới chỉ có hiệu lực khi nhóm phê duyệt. Với ảnh có nhiều vật, mô tả tập trung vào điểm dễ gây bất đồng.
 
 | Ảnh | Tình huống quan sát | Quyết định đề xuất | Lý do |
 |---|---|---|---|
@@ -169,11 +169,11 @@ Luôn báo cáo tử số và mẫu số; đếm thêm box không ghép được
 
 ### 5.2. Quy trình kiểm và xử lý ca mơ hồ
 
-- Pha 1: Học viên tự kiểm tra 40 ảnh và các đề xuất ở mục 4, xác nhận hoặc điều chỉnh bằng lập luận của mình; khai báo phạm vi hỗ trợ AI.
+- Pha 1: Viết bản cá nhân, nêu ca khó theo ảnh thật và khai báo phạm vi hỗ trợ AI.
 - Pha 2: Nhóm chốt v1.0 và taxonomy; chỉ sau đó mới dùng để gán chính thức.
 - Pha 3: Gán độc lập; nhóm năm người cần ba người gán mỗi ảnh. Không đổi guideline giữa pha. Ca mơ hồ ghi `can_review` hoặc ghi sổ nếu chưa có box hợp lệ.
 - Pha 4–5: So sánh IAA, xem bất đồng, họp calibration; người chốt do nhóm phân công. Mỗi quyết định thực tế được ghi một dòng trong `calibration_decisions.csv`; quy tắc mới ghi vào v1.1.
-- Pha 6: Theo quy trình lab, kiểm mọi ảnh từng bị cờ cộng 20 ảnh ngẫu nhiên; báo cáo số ảnh duy nhất thực tế được kiểm. Đây là cách lấy mẫu nới lỏng cho lab 40 ảnh, không phải tuyên bố đã kiểm toàn bộ lô.
+- Pha 6: Duyệt toàn bộ lô 40/40 ảnh theo vòng (`qc_sample.py --round N`), báo cáo tỉ lệ lỗi theo ảnh và theo đối tượng kèm mẫu số.
 
 Kiểm đủ năm loại lỗi: `bo_sot`, `thua`, `sai_lop`, `sai_vi_tri_kich_thuoc`, `sai_thuoc_tinh`. Ảnh đã kiểm sạch ghi `khong`. Báo cáo cả tỉ lệ lỗi theo ảnh và theo đối tượng, kèm mẫu số.
 
@@ -195,4 +195,3 @@ Hiện chưa có số liệu QC được xác minh cho bản này; không đưa 
 | v0.1 cá nhân — bản nháp | Biên tập đủ năm phần; giữ sáu lớp cơ sở; dùng đúng thuộc tính và ngưỡng QC; bổ sung đề xuất quy tắc. | Bản cũ thiếu `van`, `ignore_region`, dùng mức thuộc tính chưa khớp và còn mã ảnh minh họa. |
 | v0.2 cá nhân — hoàn thiện bảng ảnh | Rà soát 40 ảnh gốc với hỗ trợ AI; điền 40 mã ảnh thật và quyết định đề xuất; bổ sung ba lớp đề xuất, làm rõ bus/van và sidecar. | Sửa các mã ảnh minh họa; bổ sung ca che/cắt, đám đông, vật không thật, xe trưng bày và xe chở hàng. |
 
-**Trước khi sử dụng:** Học viên cần tự rà soát quyết định và ghi công cụ AI, phạm vi hỗ trợ (gồm việc xem ảnh, đề xuất xử lý) cùng cách kiểm tra thực tế trong ghi chú cá nhân. Các quy tắc còn cần họp được ghi rõ; không tuyên bố đã thống nhất nhóm, gán nhãn hoặc QC chỉ từ tài liệu này.

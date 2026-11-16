@@ -24,10 +24,21 @@ So bản cá nhân với kết quả nhóm chốt trong `guideline_v1.0_agreed.m
 | #15 | Bia mộ img_027, xe vàng img_024 | Không gán img_027; img_024 gán `car` | Gán lớp xe + `drivable=no` | Đồng ý; vật hình xe cỡ thật vẫn có ích nếu đánh `drivable=no` để lọc khi huấn luyện |
 
 ## 3. Pha 3: ảnh tôi đã gán
-(Sẽ cập nhật sau khi phân chia ảnh và hoàn thành gán nhãn Pha 3)
+
+- Số ảnh được giao: **24** (`submission/qc/assignments/2A202603101.txt`); file nhãn `submission/labels/2A202603101_NguyenXuanAnh.json`, `validate_labels.py` báo hợp lệ, đủ 24 ảnh.
+- Số box đã vẽ: **355** (person 155, motorcycle 97, car 69, ignore_region 10, bicycle 7, three_wheeler 6, bus 5, truck 3, van 3) · Số lần tick `can_review`: **12**
+- Ca lưỡng lự nhất khi gán: **img_014.jpg** (ảnh tôi tick `can_review` nhiều nhất: 8 box).
 
 ## 4. Pha 4–5: tôi lệch ở đâu
-(Sẽ cập nhật sau khi chạy so sánh đo IAA và họp calibration)
+
+- Số ca trong `calibration_candidates.csv` có tên tôi: **865** (lệch occluded_level 227, bỏ sót/thừa 198, IoU thấp 188, bất đồng ignore 131, lệch drivable 65, lệch truncated 31, sai lớp 13, can_review 12).
+- Đồng thuận của tôi với các bạn (gộp các cặp có tôi, 473 cặp box ghép): IoU TB 0.832, cùng lớp 97.3%, cùng `occluded_level` 52.0%.
+- Ảnh tôi lệch nhiều nhất: img_021.jpg (100 ca), img_003.jpg (77 ca), img_006.jpg (71 ca).
+- Nguyên nhân:
+  - lệch `occluded_level` (227 ca) và bất đồng vùng ignore (131 ca): **guideline mơ hồ**, cả nhóm cùng lệch vì ước lượng % che và ranh giới vùng dày bằng mắt; v1.1 thêm R-15 để chốt cách ước lượng
+  - lệch `drivable` (65 ca): chủ yếu do quy tắc đồ chơi/xe không chạy được (R-14) và lỗi `person` của một người khác
+  - bỏ sót/thừa (198 ca) và IoU thấp (188 ca): mỗi người dừng vẽ ở ngưỡng vật nhỏ khác nhau và ôm box chưa đều (R-01, R-03)
+- Quyết định calibration quan trọng nhất với tôi: R-15 (cách ước lượng `occluded_level`, phân vân chọn mức thấp hơn), vì đây là nhóm ca lệch nhiều nhất (427 ca toàn nhóm).
 
 ## 5. Dùng AI
 - Công cụ: Antigravity Assistant.

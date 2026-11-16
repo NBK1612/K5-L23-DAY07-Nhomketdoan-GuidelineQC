@@ -28,18 +28,25 @@ So bản cá nhân với kết quả nhóm chốt trong `guideline_v1.0_agreed.m
 
 ## 3. Pha 3: ảnh tôi đã gán
 
-- Số ảnh được giao: 24 · Số box đã vẽ: <<>> · Số lần tôi tick `can_review`: <<>>
-- Ca nào tôi lưỡng lự nhất khi gán (ảnh, vì sao)? <<>>
+- Số ảnh được giao: **24** (`submission/qc/assignments/2A202603201.txt`); file nhãn `submission/labels/2A202603201_BuiQuangHuy.json`, `validate_labels.py` báo hợp lệ, đủ 24 ảnh.
+- Số box đã vẽ: **276** (person 135, car 56, motorcycle 45, ignore_region 12, bicycle 12, bus 5, van 4, three_wheeler 4, truck 3) · Số lần tick `can_review`: **3**
+- Ca lưỡng lự nhất khi gán: **img_007.jpg** (ảnh tôi tick `can_review` nhiều nhất: 1 box).
 
 ## 4. Pha 4–5: tôi lệch ở đâu
 
-- Trong `calibration_candidates.csv`, các ca có tên tôi: tôi lệch vì guideline mơ hồ hay vì tôi chưa nắm quy tắc? <<>>
-- Quyết định calibration nào tôi thấy quan trọng nhất? <<>>
+- Số ca trong `calibration_candidates.csv` có tên tôi: **728** (lệch occluded_level 197, bỏ sót/thừa 143, IoU thấp 140, bất đồng ignore 108, lệch drivable 88, lệch truncated 27, sai lớp 22, can_review 3).
+- Đồng thuận của tôi với các bạn (gộp các cặp có tôi, 387 cặp box ghép): IoU TB 0.841, cùng lớp 94.3%, cùng `occluded_level` 49.1%.
+- Ảnh tôi lệch nhiều nhất: img_021.jpg (92 ca), img_032.jpg (91 ca), img_011.jpg (66 ca).
+- Nguyên nhân:
+  - lệch `occluded_level` (197 ca) và bất đồng vùng ignore (108 ca): **guideline mơ hồ**, cả nhóm cùng lệch vì ước lượng % che và ranh giới vùng dày bằng mắt; v1.1 thêm R-15 để chốt cách ước lượng
+  - lệch `drivable` (88 ca): **tôi chưa nắm quy tắc**, đặt `drivable=no` cho box `person` trong khi mục 2.2 quy định `person` luôn `yes`; v1.1 thêm R-17
+  - bỏ sót/thừa (143 ca) và IoU thấp (140 ca): mỗi người dừng vẽ ở ngưỡng vật nhỏ khác nhau và ôm box chưa đều (R-01, R-03)
+- Quyết định calibration quan trọng nhất với tôi: R-17 (`person` luôn `drivable=yes`), vì lỗi này đến từ cách tôi hiểu quy tắc.
 
 ## 5. Dùng AI
 
-- Claude Code: so guideline cá nhân với yêu cầu trong GUIDE/RUBRIC/template, đổi tên file sang mã 201 và bỏ thông tin cá nhân, thống nhất ký hiệu `[chưa chốt, cần họp]`, tạo khung ghi chú này. Cách tôi kiểm lại: <<tự mở lại các ảnh được dẫn, đối chiếu từng quyết định với ảnh, sửa chỗ không đồng ý>>.
+- Claude Code: so guideline cá nhân với yêu cầu trong GUIDE/RUBRIC/template, đổi tên file sang mã 201 và bỏ thông tin cá nhân, thống nhất ký hiệu `[chưa chốt, cần họp]`, tạo khung ghi chú này. Cách tôi kiểm lại: tự mở lại các ảnh được dẫn, đối chiếu từng quyết định với ảnh, sửa chỗ không đồng ý.
 
 ## 6. Bài học
 
-- Một điều tôi sẽ làm khác khi viết guideline lần sau: <<>>
+- Một điều tôi sẽ làm khác khi viết guideline lần sau: ghi rõ thuộc tính nào áp cho lớp nào ngay trong bảng thuộc tính, kèm giá trị mặc định. Tôi đặt `drivable=no` cho 88 box `person` vì hiểu sai phạm vi của `drivable`; nếu guideline có dòng "`person`: luôn để mặc định" ngay cạnh định nghĩa thuộc tính thì đã tránh được.

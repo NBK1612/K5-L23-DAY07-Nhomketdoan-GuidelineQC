@@ -166,6 +166,8 @@ Mỗi quy tắc có mã để dẫn lại trong mục 4 và trong `calibration_d
 
 Áp dụng cho từng nhóm ca trong `calibration_candidates.csv`; mỗi ca một dòng trong `calibration_decisions.csv`. Người chốt: 2A202603191 (leader). Người sửa: 2A202603245. Người kiểm lại: 2A202603101.
 
+> **Thực tế thực hiện:** nhóm chưa sửa tay trên CVAT. Nhãn cuối (`labels_calibrated.json`) lấy theo đồng thuận đa số 3 người (`consensus_draft.json`, box trung bình, lớp và thuộc tính theo đa số) và áp tự động R-17. Các ca cần xem ảnh (bỏ sót/thừa, IoU thấp, ignore, sai lớp, R-15, R-16) **chưa được sửa**, chuyển sang QC vòng 1; nếu QC ra Rework thì sửa theo bảng dưới ở vòng 2.
+
 | Loại ca | Số ca | Quyết định | Quy tắc | Phạm vi |
 |---|---|---|---|---|
 | Lệch `occluded_level` | 427 | Lấy mức theo đa số người gán; nếu ba người khác nhau hoặc chỉ hai người lệch, người sửa ước lượng lại theo R-15 | R-15 | `lo` (R-15 áp cho cả lô) |
