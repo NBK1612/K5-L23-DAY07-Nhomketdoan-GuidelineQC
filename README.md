@@ -1,4 +1,4 @@
-# Day 07 Lab — Guideline, Taxonomy & QC — Nhóm Kết Đoàn
+# Day 07 Lab — Nhóm Kết Đoàn: 2A202603191 - Nguyễn Bảo Khánh, 2A202603103 - Lê Ngọc Dũng, 2A202603201 - Bùi Quang Huy, 2A202603245 - Nguyễn Sỹ Kiên, 2A202603101 - Nguyễn Xuân Anh
 
 **Nhóm 2–5 người · 4 giờ · 40 ảnh đường phố · gán box bằng CVAT**
 

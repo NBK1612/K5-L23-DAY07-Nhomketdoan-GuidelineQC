@@ -1,6 +1,6 @@
-# Guideline gán nhãn Bounding Box — v0.1 (Bản cá nhân) — 245
+# Guideline gán nhãn Bounding Box — v0.1 (Bản cá nhân) — 2A202603245 - Nguyễn Sỹ Kiên
 
-- **Người thực hiện:** 245
+- **Người thực hiện:** 2A202603245 - Nguyễn Sỹ Kiên
 - **Lớp:** K5-L2A
 - **Nhóm:** G-05_t-004_Nhóm kết đoàn
 - **Ngày lập:** 16/11/2026
@@ -172,5 +172,5 @@ Mỗi box đối tượng (trừ `ignore_region`) đều phải được gán đ
 | Phiên bản | Tác giả | Tóm tắt các nội dung thay đổi chính | Căn cứ & Mục tiêu kỹ thuật |
 |:---:|---|---|---|
 | **v0.0** | Giảng viên | Bản khung sơ khai gồm 5 lớp cơ bản (`car`, `truck`, `van`, `motorcycle`, `person`), thiếu quy tắc xử lý thực thể giả và xe đặc thù châu Á. | Bản gốc ban đầu của repo thực hành. |
-| **v0.1-245** | 245 | 1. **Đề xuất mở rộng taxonomy lên 8 lớp + 1 vùng bỏ qua:** bổ sung `three_wheeler` (bao gồm tuk-tuk và xích lô), `bus`, `bicycle` để phản ánh đúng thực tế 40 ảnh giao thông châu Á.<br>2. Định lượng hoá 4 mức `occluded_level` ($0, 1, 2, 3$) dựa trên tỷ lệ phần trăm diện tích che khuất bề mặt.<br>3. Ban hành quy tắc phân tách chặt chẽ giữa Người và Phương tiện (buồng lái hở vs buồng lái kín).<br>4. Thiết lập quy tắc loại trừ triệt để thực thể giả: tượng đài đá, ma-nơ-canh, biển pano 2D, mô hình đồ chơi, hình ảnh phản chiếu gương chiếu hậu.<br>5. Bảng phân tích chi tiết toàn diện 40/40 ảnh trong bộ dữ liệu, chỉ rõ các ca khó dị biệt (Predator, xe máy điêu khắc, đường ướt phản chiếu đêm, xe chở hàng quá khổ, xe cõng tượng ngựa...) và gắn cờ `can_review=true` để tự rà soát thủ công trước khi họp Pha 2. | Khảo sát thực tế toàn bộ 40 ảnh `img_001` - `img_040`, chuẩn bị cơ sở dữ liệu và lý lẽ kỹ thuật vững chắc cho phiên họp thống nhất Pha 2 của nhóm. |
+| **v0.1-2A202603245** | 2A202603245 - Nguyễn Sỹ Kiên | 1. **Đề xuất mở rộng taxonomy lên 8 lớp + 1 vùng bỏ qua:** bổ sung `three_wheeler` (bao gồm tuk-tuk và xích lô), `bus`, `bicycle` để phản ánh đúng thực tế 40 ảnh giao thông châu Á.<br>2. Định lượng hoá 4 mức `occluded_level` ($0, 1, 2, 3$) dựa trên tỷ lệ phần trăm diện tích che khuất bề mặt.<br>3. Ban hành quy tắc phân tách chặt chẽ giữa Người và Phương tiện (buồng lái hở vs buồng lái kín).<br>4. Thiết lập quy tắc loại trừ triệt để thực thể giả: tượng đài đá, ma-nơ-canh, biển pano 2D, mô hình đồ chơi, hình ảnh phản chiếu gương chiếu hậu.<br>5. Bảng phân tích chi tiết toàn diện 40/40 ảnh trong bộ dữ liệu, chỉ rõ các ca khó dị biệt (Predator, xe máy điêu khắc, đường ướt phản chiếu đêm, xe chở hàng quá khổ, xe cõng tượng ngựa...) và gắn cờ `can_review=true` để tự rà soát thủ công trước khi họp Pha 2. | Khảo sát thực tế toàn bộ 40 ảnh `img_001` - `img_040`, chuẩn bị cơ sở dữ liệu và lý lẽ kỹ thuật vững chắc cho phiên họp thống nhất Pha 2 của nhóm. |
 

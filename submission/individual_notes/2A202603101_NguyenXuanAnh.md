@@ -1,4 +1,4 @@
-# Ghi chú cá nhân — 101
+# Ghi chú cá nhân — 2A202603101 - Nguyễn Xuân Anh
 
 ## 1. Pha 1: ba ca khó tôi tìm ra trong 40 ảnh
 | Ảnh | v0 không trả lời được gì | Quyết định ban đầu của tôi |

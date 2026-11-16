@@ -1,4 +1,4 @@
-# Ghi chú cá nhân — 201
+# Ghi chú cá nhân — 2A202603201 - Bùi Quang Huy
 
 ## 1. Pha 1: ba ca khó tôi tìm ra trong 40 ảnh
 

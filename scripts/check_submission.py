@@ -6,7 +6,7 @@ from collections import defaultdict
 import json
 import re
 
-from common import QC_DIR, ROOT, digest, load_all_labels, load_taxonomy, require_assignment
+from common import QC_DIR, ROOT, digest, find_personal_file, load_all_labels, load_taxonomy, require_assignment
 from qc_report import make_report
 from review_evidence import LABELS_PATH, round_dir
 
@@ -47,9 +47,9 @@ def main() -> int:
     errors = []
     for member in sorted(members):
         for path in (
-            SUB / "guidelines" / "individual" / f"guideline_{member}.md",
-            SUB / "labels" / f"{member}.json",
-            SUB / "individual_notes" / f"{member}.md",
+            find_personal_file(SUB / "guidelines" / "individual", member, ".md", "guideline_"),
+            find_personal_file(SUB / "labels", member, ".json"),
+            find_personal_file(SUB / "individual_notes", member, ".md"),
         ):
             if not path.is_file() or not path.read_text(encoding="utf-8").strip():
                 errors.append(f"Thiếu hoặc trống: {path.relative_to(ROOT)}.")
@@ -58,7 +58,7 @@ def main() -> int:
         errors.append("Danh sách file nhãn phải khớp mã thành viên trong assignment.csv.")
     starter = ROOT / "guideline" / "guideline_v0_starter.md"
     for member in sorted(members):
-        draft = SUB / "guidelines" / "individual" / f"guideline_{member}.md"
+        draft = find_personal_file(SUB / "guidelines" / "individual", member, ".md", "guideline_")
         if draft.is_file() and digest(draft) == digest(starter):
             errors.append(f"Guideline {member} giống nguyên bản v0.")
     report = QC_DIR / "QC_REPORT.md"

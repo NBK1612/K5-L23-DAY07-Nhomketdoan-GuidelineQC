@@ -1,4 +1,4 @@
-# Ghi chú cá nhân — 191
+# Ghi chú cá nhân — 2A202603191 - Nguyễn Bảo Khánh
 
 ## 1. Pha 1: ba ca khó tôi tìm ra trong 40 ảnh
 | Ảnh | v0 không trả lời được gì | Quyết định ban đầu của tôi |
@@ -19,7 +19,7 @@ Trước buổi họp, các câu tôi đánh dấu **[chưa chốt]** trong `gui
 | Ngưỡng tách đám đông | Chồng lấn < 50% thì gán riêng, còn lại `ignore_region` | (cập nhật sau họp) | |
 
 ## 3. Pha 3: ảnh tôi đã gán
-- Số ảnh được giao: **24** (`submission/qc/assignments/191.txt`: img_001, 003, 004, 006, 008, 010, 012, 013, 015, 016, 019, 020, 021, 022, 025, 026, 029, 030, 031, 033, 035, 036, 038, 039)
+- Số ảnh được giao: **24** (`submission/qc/assignments/2A202603191.txt`: img_001, 003, 004, 006, 008, 010, 012, 013, 015, 016, 019, 020, 021, 022, 025, 026, 029, 030, 031, 033, 035, 036, 038, 039)
 - Số box đã vẽ: chưa cập nhật · Số lần tick `can_review`: chưa cập nhật
 - Ca lưỡng lự nhất khi gán: chưa cập nhật (điền sau khi gán xong)
 

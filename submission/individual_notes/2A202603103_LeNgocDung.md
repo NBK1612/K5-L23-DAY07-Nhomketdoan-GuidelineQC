@@ -1,4 +1,4 @@
-# Ghi chú cá nhân — Day 07 — 103
+# Ghi chú cá nhân — Day 07 — 2A202603103 - Lê Ngọc Dũng
 
 - **Ngày:** 16/11/2026
 - **Bài thực hành:** Viết lại guideline và gán Bounding Box trên CVAT — 40 ảnh đường phố châu Á

@@ -1,8 +1,8 @@
-# Guideline gán nhãn — v0.2 cá nhân — 03103 - Lê Ngọc Dũng
+# Guideline gán nhãn — v0.2 cá nhân — 2A202603103 - Lê Ngọc Dũng
 
 - Phiên bản: v0.2 cá nhân — bản đề xuất có bảng rà soát 40 ảnh, để người viết kiểm tra trước Pha 2.
 - Ngày: 16/11/2026.
-- Người viết: 03103 - Lê Ngọc Dũng; Codex hỗ trợ soạn nội dung và xem 40 ảnh theo yêu cầu; học viên cần rà soát, xác nhận quyết định trước khi sử dụng.
+- Người viết: 2A202603103 - Lê Ngọc Dũng; Codex hỗ trợ soạn nội dung và xem 40 ảnh theo yêu cầu; học viên cần rà soát, xác nhận quyết định trước khi sử dụng.
 - Người duyệt: Chưa duyệt.
 - Công cụ: CVAT; nhãn bounding box; xuất COCO 1.0.
 - Dữ liệu: 40 ảnh trong `data/images/`.

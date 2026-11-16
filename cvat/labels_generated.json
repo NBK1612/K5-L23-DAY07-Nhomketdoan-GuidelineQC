@@ -2,6 +2,7 @@
   {
     "name": "car",
     "color": "#e6194b",
+    "type": "rectangle",
     "attributes": [
       {
         "name": "occluded_level",
@@ -26,17 +27,30 @@
         ]
       },
       {
+        "name": "drivable",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "yes",
+        "values": [
+          "yes",
+          "no"
+        ]
+      },
+      {
         "name": "can_review",
         "mutable": false,
         "input_type": "checkbox",
         "default_value": "false",
-        "values": []
+        "values": [
+          "false"
+        ]
       }
     ]
   },
   {
     "name": "truck",
     "color": "#3cb44b",
+    "type": "rectangle",
     "attributes": [
       {
         "name": "occluded_level",
@@ -61,17 +75,30 @@
         ]
       },
       {
+        "name": "drivable",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "yes",
+        "values": [
+          "yes",
+          "no"
+        ]
+      },
+      {
         "name": "can_review",
         "mutable": false,
         "input_type": "checkbox",
         "default_value": "false",
-        "values": []
+        "values": [
+          "false"
+        ]
       }
     ]
   },
   {
     "name": "van",
     "color": "#4363d8",
+    "type": "rectangle",
     "attributes": [
       {
         "name": "occluded_level",
@@ -96,17 +123,78 @@
         ]
       },
       {
+        "name": "drivable",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "yes",
+        "values": [
+          "yes",
+          "no"
+        ]
+      },
+      {
         "name": "can_review",
         "mutable": false,
         "input_type": "checkbox",
         "default_value": "false",
-        "values": []
+        "values": [
+          "false"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "bus",
+    "color": "#f58231",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "name": "occluded_level",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "0",
+        "values": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "name": "truncated",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "no",
+        "values": [
+          "no",
+          "yes"
+        ]
+      },
+      {
+        "name": "drivable",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "yes",
+        "values": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "name": "can_review",
+        "mutable": false,
+        "input_type": "checkbox",
+        "default_value": "false",
+        "values": [
+          "false"
+        ]
       }
     ]
   },
   {
     "name": "motorcycle",
-    "color": "#f58231",
+    "color": "#911eb4",
+    "type": "rectangle",
     "attributes": [
       {
         "name": "occluded_level",
@@ -131,17 +219,126 @@
         ]
       },
       {
+        "name": "drivable",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "yes",
+        "values": [
+          "yes",
+          "no"
+        ]
+      },
+      {
         "name": "can_review",
         "mutable": false,
         "input_type": "checkbox",
         "default_value": "false",
-        "values": []
+        "values": [
+          "false"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "bicycle",
+    "color": "#46c8c8",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "name": "occluded_level",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "0",
+        "values": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "name": "truncated",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "no",
+        "values": [
+          "no",
+          "yes"
+        ]
+      },
+      {
+        "name": "drivable",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "yes",
+        "values": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "name": "can_review",
+        "mutable": false,
+        "input_type": "checkbox",
+        "default_value": "false",
+        "values": [
+          "false"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "three_wheeler",
+    "color": "#f032e6",
+    "type": "rectangle",
+    "attributes": [
+      {
+        "name": "occluded_level",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "0",
+        "values": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "name": "truncated",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "no",
+        "values": [
+          "no",
+          "yes"
+        ]
+      },
+      {
+        "name": "drivable",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "yes",
+        "values": [
+          "yes",
+          "no"
+        ]
+      },
+      {
+        "name": "can_review",
+        "mutable": false,
+        "input_type": "checkbox",
+        "default_value": "false",
+        "values": [
+          "false"
+        ]
       }
     ]
   },
   {
     "name": "person",
-    "color": "#911eb4",
+    "color": "#9a6324",
+    "type": "rectangle",
     "attributes": [
       {
         "name": "occluded_level",
@@ -166,17 +363,30 @@
         ]
       },
       {
+        "name": "drivable",
+        "mutable": false,
+        "input_type": "select",
+        "default_value": "yes",
+        "values": [
+          "yes",
+          "no"
+        ]
+      },
+      {
         "name": "can_review",
         "mutable": false,
         "input_type": "checkbox",
         "default_value": "false",
-        "values": []
+        "values": [
+          "false"
+        ]
       }
     ]
   },
   {
     "name": "ignore_region",
     "color": "#808080",
+    "type": "rectangle",
     "attributes": []
   }
 ]

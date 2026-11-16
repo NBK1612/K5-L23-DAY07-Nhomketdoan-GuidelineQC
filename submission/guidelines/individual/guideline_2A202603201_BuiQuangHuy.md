@@ -1,8 +1,8 @@
-# Guideline gán nhãn — v0.1 (bản cá nhân) — 201
+# Guideline gán nhãn — v0.1 (bản cá nhân) — 2A202603201 - Bùi Quang Huy
 
 - Phiên bản: v0.1 (bản cá nhân, viết từ v0 sau khi xem đủ 40 ảnh)
 - Ngày: 2026-11-16
-- Người viết: 201 (Nhóm Kết Đoàn)
+- Người viết: 2A202603201 - Bùi Quang Huy (Nhóm Kết Đoàn)
 - Loại nhãn: bounding box trên ảnh đường phố, công cụ CVAT, xuất COCO 1.0
 
 > Những chỗ đánh dấu **[chưa chốt, cần họp]** là chỗ tôi chưa chắc, cần hỏi reviewer hoặc đem ra Pha 2.
@@ -108,6 +108,6 @@ Mô hình cần tìm ra mọi người và phương tiện **thật** có thể 
 | Phiên bản | Thay đổi | Lý do (ca nào) |
 |---|---|---|
 | v0 | Bản khởi đầu của giảng viên | — |
-| v0.1 (bản cá nhân 201) | Đề xuất thêm `bus`, `bicycle`, `three_wheeler`; ngưỡng `occluded_level` theo %; quy tắc R-01…R-12; bảng ca khó | img_004, img_009, img_006, img_002, img_017, img_020 |
+| v0.1 (bản cá nhân 2A202603201 - Bùi Quang Huy) | Đề xuất thêm `bus`, `bicycle`, `three_wheeler`; ngưỡng `occluded_level` theo %; quy tắc R-01…R-12; bảng ca khó | img_004, img_009, img_006, img_002, img_017, img_020 |
 
 Các đề xuất này sẽ được so với bản của các thành viên khác ở Pha 2 trước khi đưa vào `guideline_v1.0_agreed.md`.

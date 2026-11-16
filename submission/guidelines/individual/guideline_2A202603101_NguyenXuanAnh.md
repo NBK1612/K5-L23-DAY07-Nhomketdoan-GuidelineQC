@@ -1,6 +1,6 @@
 # Guideline gán nhãn phát hiện đối tượng đường phố — v0.1 (Bản cá nhân mở rộng)
 
-- **Người thực hiện:** mã 101
+- **Người thực hiện:** 2A202603101 - Nguyễn Xuân Anh
 - **Lớp:** K5-L2A
 - **Nhóm:** G-05_t-004_Nhóm kết đoàn
 - **Ngày lập:** 16/11/2026
@@ -150,4 +150,4 @@ Mỗi vật thể thực trên đường thuộc đúng **một lớp duy nhất
 | Phiên bản | Người thực hiện | Nội dung thay đổi so với v0 | Cơ sở và lý do |
 |---|---|---|---|
 | **v0.0** | Giảng viên | Bản sơ khai ban đầu chỉ có 5 lớp cơ bản, không có quy tắc chi tiết cho giao thông phức tạp. | Bản tài liệu gốc của bài lab. |
-| **v0.1** | 101 | 1. **Mở rộng Taxonomy từ 5 lên 9 lớp đối tượng:** bổ sung `bus`, `tuk_tuk`, `bicycle`, `cyclo` để bao phủ triệt để thực tế 40 ảnh giao thông châu Á.<br>2. Định lượng hoá 4 mức `occluded_level` theo ngưỡng diện tích che khuất.<br>3. Ban hành quy tắc phân tách nghiêm ngặt giữa người và phương tiện (người lái vs xe).<br>4. Quy tắc loại trừ đối tượng phi thực thể: biển quảng cáo 2D, tượng đài, ma-nơ-canh, đồ chơi, ảnh phản chiếu gương.<br>5. Bảng phân tích chi tiết 40/40 ảnh trong tập dữ liệu với các lớp đề xuất mới. | Khảo sát thực tế toàn diện 40 ảnh `img_001` - `img_040`, giải quyết triệt để các ca khó đặc trưng đường phố châu Á để chuẩn bị cho buổi họp nhóm Pha 2. |
+| **v0.1** | 2A202603101 - Nguyễn Xuân Anh | 1. **Mở rộng Taxonomy từ 5 lên 9 lớp đối tượng:** bổ sung `bus`, `tuk_tuk`, `bicycle`, `cyclo` để bao phủ triệt để thực tế 40 ảnh giao thông châu Á.<br>2. Định lượng hoá 4 mức `occluded_level` theo ngưỡng diện tích che khuất.<br>3. Ban hành quy tắc phân tách nghiêm ngặt giữa người và phương tiện (người lái vs xe).<br>4. Quy tắc loại trừ đối tượng phi thực thể: biển quảng cáo 2D, tượng đài, ma-nơ-canh, đồ chơi, ảnh phản chiếu gương.<br>5. Bảng phân tích chi tiết 40/40 ảnh trong tập dữ liệu với các lớp đề xuất mới. | Khảo sát thực tế toàn diện 40 ảnh `img_001` - `img_040`, giải quyết triệt để các ca khó đặc trưng đường phố châu Á để chuẩn bị cho buổi họp nhóm Pha 2. |
