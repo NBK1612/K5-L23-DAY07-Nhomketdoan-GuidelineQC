@@ -20,7 +20,7 @@
 | 3 | Pickup (img_001, img_012, img_028, img_037) | `truck` (2A202603191, 2A202603103, 2A202603201, 2A202603245); `car` (2A202603101) | `truck` | Tiêu chí nhìn thấy được: cabin tách khỏi thùng. Pickup có nắp thùng (img_037) vẫn là `truck` |
 | 4 | Ngưỡng `occluded_level` | <10/10–40/40–70/≥70 (2A202603191); <10/10–40/40–80/>80 (2A202603201); <10/10–35/35–70/≥70 (2A202603245); <5/5–30/30–70/>70 (2A202603101); 0/<30/30–70/≥70 (2A202603103) | <10 / 10–<40 / 40–<70 / ≥70 | Mốc 10 trùng ở 2A202603191, 2A202603201, 2A202603245; mốc 70 trùng ở 2A202603191, 2A202603103, 2A202603245, 2A202603101; mốc 40 theo 2A202603191, 2A202603201 |
 | 5 | Vật nhỏ, đám đông | <20 px không vẽ box; vùng dày không tách được → một `ignore_region` (2A202603191, 2A202603103, 2A202603201, 2A202603245, 2A202603101) | Theo R-03, R-04 | Khớp `min_box_height_px = 20` trong taxonomy |
-| 6 | Tủ đồ chơi img_038 | Không gán, không ignore (2A202603191, 2A202603103, 2A202603201); một `ignore_region` bao tủ (2A202603101, 2A202603245) | Không gán, không ignore | Đa số 3/5. Đồ chơi thu nhỏ là mẫu âm và phần lớn < 20 px; thuộc tính `drivable` (#15) chỉ dùng cho vật cỡ thật |
+| 6 | Tủ đồ chơi img_038 | Không gán, không ignore (2A202603191, 2A202603103, 2A202603201); một `ignore_region` bao tủ (2A202603101, 2A202603245) | Mỗi xe mô hình/đồ chơi cao ≥ 20 px: vẽ box theo lớp xe + `drivable=no`; nhỏ hơn 20 px bỏ qua, không ignore | Leader 2A202603191 quyết mở rộng #15 cho cả đồ chơi: mô hình cần học nhận ra hình xe nhưng biết xe đó không chạy được, lọc được bằng `drivable` |
 | 7 | Xe trong gương chiếu hậu img_020 | Không gán gì (2A202603191, 2A202603103, 2A202603101, 2A202603245); `ignore_region` bao mặt gương (2A202603201) | Không gán, không ignore | Đa số 4/5 |
 | 8 | Người trong xe | Xe hở gán, xe kín sau kính không gán (2A202603191, 2A202603245); gán nếu thấy rõ người qua kính (2A202603201, 2A202603103); gán người trong tuk-tuk (2A202603101) | Xe hở / khoang hở: gán `person`. Xe kín chỉ thấy qua kính: không gán | 2A202603191 và 2A202603245 trùng; người sau kính khó vẽ box nhất quán |
 | 9 | Tượng ngựa trên pickup img_028 | Box không bao ngựa (2A202603191, 2A202603103); `can_review` (2A202603101, 2A202603245); chưa chốt (2A202603201) | Box `truck` chỉ bao thân xe, không bao tượng | Chốt trong họp: tượng là vật trang trí, không phải hàng chở (R-05, R-09) |
@@ -29,7 +29,7 @@
 | 12 | Xe vàng img_024 | Xe vàng đặt trên nóc xe đen trong bảo tàng (2A202603191, 2A202603103); xe vàng trên mái tòa nhà phía xa, tiền cảnh là xe AMC Pacer cận cảnh (2A202603101, 2A202603245); chưa chốt (2A202603201) | Xe vàng → `car` + `drivable=no`; xe cổ tiền cảnh → `car` + `drivable=yes` | Chốt trong họp: thay vì tranh luận xe thật hay mô hình, ghi nhận bằng thuộc tính `drivable` (#15) |
 | 13 | Ống dài img_029 | Box xe không bao ống (2A202603191, 2A202603103, 2A202603201, 2A202603245); bao cả hàng (2A202603101) | Không bao ống | Vật do người cầm, vươn xa gấp nhiều lần thân xe |
 | 14 | Xe diễu hành img_019 | `car` (2A202603191, 2A202603103, 2A202603201); `car` + `can_review` (2A202603101, 2A202603245) | `car` | Có người lái, chạy thật trên đường |
-| 15 | Vật hình xe cỡ thật nhưng không chạy được (img_011, img_024, img_027) | Bia mộ img_027: không gán (cả 5 bản); xe máy điêu khắc img_011, xe vàng img_024: gán lớp xe + `can_review` (2A202603191, 2A202603101, 2A202603245) | Thêm thuộc tính `drivable` (`yes`/`no`). Vật hình xe **cỡ thật**: vẽ box theo lớp xe + `drivable=no`. Đồ chơi thu nhỏ vẫn không gán | Chốt trong họp. Giữ được thông tin cho mô hình (có thể lọc khi huấn luyện) và tránh tranh luận "thật hay giả" cho từng ca (R-14) |
+| 15 | Vật hình xe không chạy được (img_011, img_024, img_027, img_038) | Bia mộ img_027: không gán (cả 5 bản); xe máy điêu khắc img_011, xe vàng img_024: gán lớp xe + `can_review` (2A202603191, 2A202603101, 2A202603245) | Thêm thuộc tính `drivable` (`yes`/`no`). Mọi vật hình xe không chạy được (cỡ thật hoặc đồ chơi, mô hình thu nhỏ) cao ≥ 20 px: vẽ box theo lớp xe + `drivable=no` | Chốt trong họp. Giữ được thông tin cho mô hình (có thể lọc khi huấn luyện) và tránh tranh luận "thật hay giả" cho từng ca (R-14) |
 | 16 | Hàng chất trên xe (img_001, img_012, img_035) | Tính vào box xe (2A202603191, 2A202603201, 2A202603245, 2A202603101); box chỉ bao thân xe, không bao hàng (2A202603103) | Tính vào box xe (R-09) | Đa số 4/5; hàng chất cố định là kích thước xe chiếm trên đường |
 
 ## 1. Mục tiêu
@@ -38,7 +38,7 @@ Nhãn dùng để huấn luyện mô hình **phát hiện người và phương 
 
 - Mô hình phải tìm được mọi người và phương tiện **thật**, kể cả xe đang đỗ hay đang trưng bày.
 - **Lỗi nguy hiểm nhất:** bỏ sót người hoặc xe thật ở gần, nhất là người đi bộ, người đi xe máy, xe đạp.
-- **Lỗi gây nhiễu:** gán vật giả (tượng, ma-nơ-canh, đồ chơi, hình in, ảnh phản chiếu) thành vật thật, làm mô hình báo động sai. Riêng vật hình xe **cỡ thật** không chạy được thì vẫn gán nhưng đánh `drivable=no`, để có thể lọc hoặc dùng riêng khi huấn luyện.
+- **Lỗi gây nhiễu:** gán vật giả (tượng, ma-nơ-canh, đồ chơi, hình in, ảnh phản chiếu) thành vật thật, làm mô hình báo động sai. Riêng vật hình xe không chạy được (xe trưng bày, điêu khắc, bia mộ, đồ chơi, mô hình) thì vẫn gán nhưng đánh `drivable=no`, để có thể lọc hoặc dùng riêng khi huấn luyện.
 - **Lỗi sai lớp:** nhầm `bus`/`truck` với `car`, `three_wheeler` với `motorcycle` làm sai ước lượng kích thước và hành vi xe.
 - Ngoài phạm vi: phân đoạn, theo dõi qua nhiều khung, nhận dạng danh tính, biển số.
 
@@ -50,7 +50,7 @@ Phép thử: *"mô hình có phải đoán ra điều này không?"* Có thì l�
 
 | Lớp | Định nghĩa (khớp `taxonomy.json`) | Ví dụ | Phản ví dụ / dễ nhầm với |
 |---|---|---|---|
-| `car` | Xe 4 bánh chở người, thân thấp, tối đa khoảng 9 chỗ: sedan, hatchback, SUV, taxi, xe diễu hành có người lái thật. | img_015, img_023, img_040 (taxi, SUV), img_019 (xe diễu hành), xe được chở trên rơ-moóc img_002 | Pickup → `truck`; xe mô hình img_038 → không gán |
+| `car` | Xe 4 bánh chở người, thân thấp, tối đa khoảng 9 chỗ: sedan, hatchback, SUV, taxi, xe diễu hành có người lái thật. | img_015, img_023, img_040 (taxi, SUV), img_019 (xe diễu hành), xe được chở trên rơ-moóc img_002 | Pickup → `truck`; xe mô hình img_038 → `car` + `drivable=no` (R-14) |
 | `truck` | Xe chở hàng có cabin tách khỏi thùng hoặc khung hàng: pickup, xe tải nhẹ, xe tải, đầu kéo kèm rơ-moóc. | img_001, img_007, img_012, img_028, img_036, img_037; đầu kéo img_002 | Van thân liền → `van`; bia mộ đá hình pickup cỡ thật img_027 → `truck` + `drivable=no` (R-14) |
 | `van` | Xe thân liền một khối, mui cao dạng hộp, dài cỡ một xe con, không có cửa khách riêng kiểu xe buýt. | img_005 (van bạc), img_016 (van trắng) | SUV, MPV mui thấp → `car`; xe dài có cửa khách → `bus` |
 | `bus` | Xe chở khách thân dài rõ rệt (≥ khoảng 1,5 lần xe con), có cửa lên xuống kiểu xe khách và dãy dài cửa sổ hành khách, gồm cả minibus. | img_009, img_031, img_032, img_037 (xe xanh phía sau), img_040 | Van img_005 |
@@ -81,7 +81,7 @@ Không nhận ra lớp (thường khi che > 90%) thì không gán.
 
 **`drivable`** (chỉ có nghĩa với lớp xe; `person` và `ignore_region` để mặc định `yes`):
 - `yes` (mặc định): xe thật chạy được, kể cả đang đỗ hay đang trưng bày.
-- `no`: vật hình xe **cỡ thật** nhưng không chạy được: xe đặt trên nóc/mái để trưng bày, xe điêu khắc, bia mộ hoặc tượng hình xe (R-14).
+- `no`: vật hình xe không chạy được: xe đặt trên nóc/mái để trưng bày, xe điêu khắc, bia mộ hoặc tượng hình xe, đồ chơi và mô hình xe thu nhỏ (R-14).
 
 **`can_review`:** tick khi không chắc lớp, không chắc ranh giới box, hoặc vật rơi vào ca có ghi `can_review` ở mục 4. Vẫn phải chọn lớp mình cho là đúng nhất. Nghi ngờ ở vùng chưa vẽ box thì ghi vào `submission/qc/image_issues.csv` (cột `image,annotator,region,note`).
 
@@ -95,7 +95,7 @@ Mỗi quy tắc có mã để dẫn lại trong mục 4 và trong `calibration_d
 | R-02 | **Người và xe hở là các box riêng.** Mỗi người lái, mỗi người ngồi sau có một box `person` (bao cả mũ bảo hiểm và chân thấy được). Xe có một box theo lớp của nó, không cố bao người. Hai box được chồng nhau. |
 | R-03 | Vật thật có box cao < 20 px thì không vẽ box. Cụm ≥ 3 vật nhỏ như vậy ở gần nhau: vẽ một `ignore_region` bao cụm. Vật nhỏ đứng lẻ: bỏ qua. |
 | R-04 | Đám đông, bãi xe dày: khi ≥ 5 vật chồng nhau quá 50% và không vẽ được box riêng theo R-01, vẽ **một** `ignore_region` bao vùng đó. Vật phía trước tách được thì vẫn vẽ box riêng; `ignore_region` không đè lên box riêng quá 30% diện tích box đó. |
-| R-05 | Tượng người, ma-nơ-canh, đồ chơi và mô hình **thu nhỏ**, hình trên billboard, tranh tường, màn hình, linh vật, nhân vật hoạt hình: **không vẽ box, không dùng ignore**. Đây là mẫu âm. Vật hình xe **cỡ thật** không chạy được thì theo R-14. |
+| R-05 | Tượng người, ma-nơ-canh, búp bê, đồ chơi hình người, hình trên billboard, tranh tường, màn hình, linh vật, nhân vật hoạt hình: **không vẽ box, không dùng ignore**. Đây là mẫu âm. Vật **hình xe** không chạy được (kể cả đồ chơi, mô hình) thì theo R-14. |
 | R-06 | Ảnh phản chiếu trong gương, kính, mặt đường ướt: không vẽ box, không dùng ignore. |
 | R-07 | Không gán xe chủ (ego), tức xe chứa máy ảnh, dù thấy cửa, nắp capo, kính chắn gió, cần gạt nước, gương hay mui xe. |
 | R-08 | Xe chở xe: đầu kéo cộng rơ-moóc là **một** box `truck`. Mỗi xe được chở là một box `car` riêng nếu đạt R-03, `occluded_level` theo phần khung sắt che. |
@@ -104,7 +104,7 @@ Mỗi quy tắc có mã để dẫn lại trong mục 4 và trong `calibration_d
 | R-11 | Người trong xe hở hoặc khoang hở (tuk-tuk, xích lô, sidecar, xe mui trần): vẽ `person` khi thấy rõ đầu và box ≥ 20 px, `occluded_level` theo phần bị thân xe che. Người trong xe kín (car, van, bus, cabin truck), chỉ thấy qua kính: không gán. |
 | R-12 | Vật nhòe hoặc ảnh tối: gán nếu vẫn nhận ra lớp, box bao phần thân đậm (bỏ vệt mờ nhạt), tick `can_review`. Không nhận ra lớp thì không gán. |
 | R-13 | Ảnh không có vật đủ điều kiện vẫn phải có trong Task và file COCO, với 0 annotation. |
-| R-14 | Vật hình xe **cỡ thật** nhưng không chạy được (xe đặt trên nóc/mái để trưng bày, xe điêu khắc, bia mộ/tượng hình xe): vẽ box theo lớp xe tương ứng (R-01, R-03) và đặt `drivable=no`. Xe thật đang đỗ hoặc trưng bày trên mặt đất: `drivable=yes`. Không chắc vật chạy được hay không: chọn `no` và tick `can_review`. |
+| R-14 | Vật hình xe không chạy được (xe đặt trên nóc/mái để trưng bày, xe điêu khắc, bia mộ/tượng hình xe, đồ chơi và mô hình xe thu nhỏ): vẽ box theo lớp xe tương ứng (R-01) và đặt `drivable=no`. Box cao < 20 px thì bỏ qua, không dùng `ignore_region`. Xe thật đang đỗ hoặc trưng bày trên mặt đất: `drivable=yes`. Không chắc vật chạy được hay không: chọn `no` và tick `can_review`. |
 
 ## 4. Ca khó
 
@@ -143,7 +143,7 @@ Mỗi quy tắc có mã để dẫn lại trong mục 4 và trong `calibration_d
 | img_033 | Ma-nơ-canh sau kính, phản chiếu | R-05, R-06 | Không gán ma-nơ-canh và phản chiếu; vật ở mép không chắc là thật → `can_review` | |
 | img_035 | Auto-rickshaw chở hàng, nhiều người đu bám | R-09, R-11, R-02 | `three_wheeler` bao cả hàng; mỗi người thấy rõ đầu → `person` occ 2–3; vùng người chồng không tách được → `ignore_region` | |
 | img_037 | Pickup có nắp thùng, xe buýt phía xa | R-10 | `truck`; xe buýt `bus` | Quyết định #3 |
-| img_038 | Tủ kính xe mô hình, búp bê | R-05, R-13 | 0 annotation | Quyết định #6 |
+| img_038 | Tủ kính xe mô hình, búp bê | R-14, R-05 | Mỗi xe mô hình cao ≥ 20 px → box theo lớp xe + `drivable=no`; xe < 20 px bỏ qua; búp bê không gán | Quyết định #6 |
 | img_040 | Đại lộ: người cắt mép, taxi, tuk-tuk, SUV, bus, xe máy | R-01, R-02 | `person` `truncated=yes`; taxi `car` `truncated=yes`; `three_wheeler`, `car`, `bus`, `motorcycle` + `person` | |
 
 ## 5. QC và phiên bản
