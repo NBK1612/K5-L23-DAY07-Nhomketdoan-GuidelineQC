@@ -1,8 +1,8 @@
-# Guideline gán nhãn — v1.0 (thống nhất) — Nhóm G-05_t-004_Nhóm kết đoàn
+# Guideline gán nhãn — v1.0 (thống nhất) — Nhóm Kết Đoàn
 
 - Phiên bản: v1.0
 - Ngày: <<YYYY-MM-DD>>
-- Người viết / duyệt: 2A202603191 - Nguyễn Bảo Khánh, 2A202603103 - Lê Ngọc Dũng, 2A202603201 - Bùi Quang Huy, 2A202603245 - Nguyễn Sỹ Kiên, 2A202603101 - Nguyễn Xuân Anh
+- Người viết / duyệt: 101, 103, 191, 201, 245
 - Loại nhãn: bounding box, CVAT, xuất COCO 1.0
 - Taxonomy đi kèm: `submission/taxonomy.json` (version `v1.0`)
 
@@ -14,7 +14,7 @@
 
 | # | Vấn đề | Các phương án trong bản cá nhân (của ai) | Nhóm chốt | Lý do | Ảnh |
 |---|---|---|---|---|---|
-| 1 | <<ví dụ: có thêm lớp bicycle / three_wheeler / bus không>> | <<2A202603191: thêm; 03xxx: ...>> | <<>> | <<>> | <<img_0xx>> |
+| 1 | <<ví dụ: có thêm lớp bicycle / three_wheeler / bus không>> | <<191: thêm; 1xx: ...>> | <<>> | <<>> | <<img_0xx>> |
 | 2 | | | | | |
 | 3 | | | | | |
 
@@ -58,6 +58,8 @@ Phép thử: *"mô hình có phải đoán ra điều này không?"* Nếu có t
 
 ## 3. Quy tắc vẽ box
 
+Mỗi quy tắc có mã `R-01`, `R-02`… để dẫn lại trong ca khó và `calibration_decisions.csv`.
+
 1. <<Ôm sát phần nhìn thấy / amodal>>
 2. <<Vật bị che>>
 3. <<Vật bị cắt mép>>
@@ -71,9 +73,9 @@ Phép thử: *"mô hình có phải đoán ra điều này không?"* Nếu có t
 
 ## 4. Ca khó
 
-| Ảnh | Tình huống | Quyết định | Lý do |
-|---|---|---|---|
-| img_0xx | | | |
+| Ảnh | Tình huống | Rule ID | Quyết định | Lý do |
+|---|---|---|---|---|
+| img_0xx | | R-xx | | |
 
 ## 5. QC và phiên bản
 

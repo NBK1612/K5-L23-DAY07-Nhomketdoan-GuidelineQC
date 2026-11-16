@@ -1,4 +1,4 @@
-# Guideline gán nhãn — v1.1 (sau calibration) — Nhóm G-05_t-004_Nhóm kết đoàn
+# Guideline gán nhãn — v1.1 (sau calibration) — Nhóm Kết Đoàn
 
 - Phiên bản: v1.1
 - Ngày: <<YYYY-MM-DD>>

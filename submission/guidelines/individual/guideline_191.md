@@ -1,8 +1,8 @@
-# Guideline gán nhãn — v0.1 (bản cá nhân) — 2A202603191 - Nguyễn Bảo Khánh | Nhóm G-05_t-004_Nhóm kết đoàn
+# Guideline gán nhãn — v0.1 (bản cá nhân) — mã 191 | Nhóm Kết Đoàn
 
-- Phiên bản: v0.1-2A202603191 (bản cá nhân, viết từ v0 sau khi xem đủ 40 ảnh)
+- Phiên bản: v0.1-191 (bản cá nhân, viết từ v0 sau khi xem đủ 40 ảnh)
 - Ngày: 2026-11-16
-- Người viết: 2A202603191 - Nguyễn Bảo Khánh
+- Người viết: 191
 - Loại nhãn: bounding box trên ảnh đường phố, công cụ CVAT, xuất COCO 1.0
 
 > Những câu đánh dấu **[chưa chốt, cần họp]** là chỗ tôi chưa chắc, đem ra Pha 2.
@@ -134,7 +134,7 @@ Che > 90% hoặc không nhận ra lớp → **không gán**. Hàng rào song s�
 | Phiên bản | Thay đổi | Lý do (ca nào) |
 |---|---|---|
 | v0 | Bản khởi đầu của giảng viên | — |
-| v0.1-2A202603191 | Thêm định nghĩa + ví dụ + phản ví dụ cho mọi lớp; đề xuất 3 lớp `bicycle`, `three_wheeler`, `bus` | Tuk-tuk img_004/016/035/040, xe đạp img_006/029, buýt img_009/031/037 |
+| v0.1-191 | Thêm định nghĩa + ví dụ + phản ví dụ cho mọi lớp; đề xuất 3 lớp `bicycle`, `three_wheeler`, `bus` | Tuk-tuk img_004/016/035/040, xe đạp img_006/029, buýt img_009/031/037 |
 | | Ngưỡng % cho `occluded_level`, `truncated`; điều kiện bắt buộc `can_review` | v0 "che ít / che nhiều / không rõ" không đo được (img_005, img_008, img_018) |
 | | 14 quy tắc vẽ box: người trên xe, xe chở vật, vật không thật, xe chủ, đám đông, nhoè, sidecar, rơ-moóc | img_002, img_017, img_019, img_020, img_021, img_022, img_027, img_033, img_038 |
 | | Bảng ca khó 30 ảnh + 5 câu hỏi cho họp | Toàn bộ 40 ảnh |

@@ -1,79 +1,82 @@
-# Việc cần làm — Nhóm G-05_t-004_Nhóm kết đoàn
+# Việc cần làm — Nhóm Kết Đoàn
 
-Đánh dấu `[x]` khi xong. Chi tiết lệnh xem [GUIDE.md](GUIDE.md), yêu cầu nộp xem [SUBMISSION.md](SUBMISSION.md).
+Đánh dấu `[x]` khi xong. Chi tiết lệnh xem [GUIDE.md](GUIDE.md), gói nộp xem [SUBMISSION.md](SUBMISSION.md).
 
+> **Quy ước mới của repo gốc:** chỉ dùng **mã thành viên 3 chữ số** trong tên file, Task CVAT, README, TEAM.md.
+> Không ghi họ tên, MSHV, email, tài khoản. Mã của nhóm: **101, 103, 191, 201, 245**.
+>
 > Trên Windows chạy script bằng `PYTHONIOENCODING=utf-8 python scripts/...` để tránh lỗi font tiếng Việt.
+> Lưu file `.md` dạng **UTF-8** (không dùng UTF-16), nếu không script đọc lỗi.
 
 ## Pha 0 · Chuẩn bị
-- [x] Fork, clone, đổi tiêu đề `README.md` (đủ 5 MSHV - Họ tên)
-- [x] `TEAM.md`: tên nhóm, K=3, danh sách thành viên
-- [ ] `TEAM.md`: URL repo, tài khoản GitHub từng người, bảng phân công
-- [ ] Kiểm tra tên repo theo mẫu `K5-L23-DAY07-<TenNhom>-GuidelineQC` (hỏi giảng viên); repo **public**
-- [ ] Mời 4 bạn làm collaborator; mỗi người đặt `git config user.name/email` đúng tài khoản GitHub
+- [x] `TEAM.md`: tên nhóm, mã thành viên, người điều phối (191)
+- [ ] `TEAM.md`: người review bản cuối, phân công của 201 và 245
+- [ ] Repo nộp chuyển **riêng tư** (Settings → Danger Zone → Change visibility → Private), cấp quyền cho coach
+- [ ] Tên repo/gói: `K5-L23-DAY07-<TenNhom>-GuidelineQC` (hỏi coach)
+- [ ] `python -m pip install -r requirements.txt` (bản mới có thêm thư viện)
 
-## Pha 1 · Guideline cá nhân (độc lập, không xem bài nhau)
-- [x] 2A202603191 - Nguyễn Bảo Khánh: viết guideline
-- [x] 2A202603191 - Nguyễn Bảo Khánh: commit + push
-- [ ] 2A202603103 - Lê Ngọc Dũng: `guideline_2A202603103_LeNgocDung.md`
-- [ ] 2A202603201 - Bùi Quang Huy: `guideline_2A202603201_BuiQuangHuy.md`
-- [ ] 2A202603245 - Nguyễn Sỹ Kiên: `guideline_2A202603245_NguyenSyKien.md`
-- [x] 2A202603101 - Nguyễn Xuân Anh: `guideline_2A202603101_NguyenXuanAnh.md`
-
-Mỗi file nằm ở `submission/guidelines/individual/` và do chính người đó commit.
+## Pha 1 · Guideline cá nhân (độc lập)
+File: `submission/guidelines/individual/guideline_<mã>.md`
+- [x] 191 — `guideline_191.md`
+- [x] 101 — `guideline_101.md`
+- [ ] 103 — `guideline_103.md`
+- [ ] 201 — `guideline_201.md`
+- [ ] 245 — `guideline_245.md`
 
 ## Pha 2 · Họp thống nhất (cả nhóm)
 - [ ] So 5 bản cá nhân, ghi các chỗ khác nhau vào mục 0 của `guideline_v1.0_agreed.md`
 - [ ] Chốt các câu hỏi chính:
-  - [ ] Có thêm lớp `bicycle` / `three_wheeler` / `bus` không?
+  - [ ] Có thêm lớp mới không (`bicycle`, `three_wheeler`/`tuk_tuk`, `cyclo`, `bus`)?
   - [ ] Xích lô (img_023) thuộc lớp nào?
   - [ ] Xe máy điêu khắc (img_011), xe vàng trên nóc (img_024) có tính là xe thật?
+  - [ ] Người đi xe máy: mấy box, mỗi box bao phần nào?
   - [ ] Box ôm phần nhìn thấy hay cả vật (amodal)?
   - [ ] Ngưỡng tách đám đông / dùng `ignore_region`
-- [ ] Viết đủ 5 phần `submission/guidelines/guideline_v1.0_agreed.md` (đã có khung)
-- [ ] Sửa `submission/taxonomy.json`: `version` → `v1.0`, `classes` + `definition` khớp v1.0. **Không đổi `rules`**
-- [ ] `python scripts/make_cvat_labels.py`
+- [ ] Viết `submission/guidelines/guideline_v1.0_agreed.md`, gắn mã `R-01`, `R-02`… cho từng quy tắc
+- [ ] Sửa `submission/taxonomy.json`: `version` → `v1.0`, `classes` khớp v1.0. **Giữ nguyên `rules`**
+- [ ] `python scripts/make_cvat_labels.py` (kiểm schema + sinh `cvat/labels_generated.json`)
+- [ ] **Khoá** v1.0 và taxonomy cho lượt gán
 
-## Pha 3 · Chia ảnh và gán nhãn (độc lập, không dùng AI)
-- [x] Một người chạy (2A202603191 đã chạy, mỗi người 24 ảnh) — [x] commit `submission/qc/`:
-  `python scripts/split_assign.py --members 2A202603191,2A202603103,2A202603201,2A202603245,2A202603101 --copy-images`
-- [ ] Mỗi người tạo Project trên CVAT bằng `cvat/labels_generated.json`, upload **đúng** ảnh trong `submission/qc/assignments/<MSHV>.txt`
-- [ ] Gán theo v1.0; ca chưa chắc thì tick `can_review`
-- [ ] Export COCO 1.0 → `submission/labels/<MSHV>_<HoTen>.json`
-  - [ ] 2A202603191_NguyenBaoKhanh.json
-  - [ ] 2A202603103_LeNgocDung.json
-  - [ ] 2A202603201_BuiQuangHuy.json
-  - [ ] 2A202603245_NguyenSyKien.json
-  - [ ] 2A202603101_NguyenXuanAnh.json
-- [ ] `python scripts/validate_labels.py --all` sạch, rồi mỗi người tự commit
+## Pha 3 · Gán nhãn (độc lập, người thật vẽ box)
+- [x] Chia ảnh (mỗi người 24 ảnh, mỗi ảnh 3 người):
+  `python scripts/split_assign.py --members 191,103,201,245,101 --copy-images`
+  (4 bạn kia `git pull` rồi chạy lại đúng lệnh này để có `work/<mã>/images/`)
+- [ ] Mỗi người tạo Project/Task CVAT tên theo mã, nhãn từ `cvat/labels_generated.json`, upload `work/<mã>/images/`
+- [ ] Gán theo v1.0; chưa chắc thì tick `can_review`; ảnh chưa vẽ được thì ghi lại để đưa vào `submission/qc/image_issues.csv` (cột `image,annotator,region,note`)
+- [ ] Export COCO 1.0 → `submission/labels/<mã>.json`, rồi `python scripts/validate_labels.py submission/labels/<mã>.json`
+  - [ ] 191.json
+  - [ ] 103.json
+  - [ ] 201.json
+  - [ ] 245.json
+  - [ ] 101.json
 
 ## Pha 4 · Đo IAA
+- [ ] `python scripts/validate_labels.py --all`
 - [ ] `python scripts/qc_compare.py`
-- [ ] `python scripts/viz_disagreement.py --images flagged` rồi xem ảnh trong `work/viz/`
-- [ ] Đọc `iaa_summary.md`: so ngưỡng IoU 0.85 / đồng thuận lớp 95%, ghi kèm mẫu số
-- [ ] Với mỗi chỗ lệch: cả nhóm cùng lệch (guideline mơ hồ) hay một người lệch (chưa nắm quy tắc)?
+- [ ] `python scripts/viz_disagreement.py --images flagged` rồi xem `work/viz/`
+- [ ] Đọc `iaa_summary.md`: mẫu số, box chưa ghép, ca cả hai cùng lệch / một người lệch / **cùng sai**
 
 ## Pha 5 · Calibration (cả nhóm)
-- [ ] `python scripts/build_final.py` lần đầu để có khung `calibration_decisions.csv`
-- [ ] Họp, mỗi quyết định **một dòng**; ảnh nào bị cờ cũng phải có ít nhất 1 dòng
-- [ ] Viết `submission/guidelines/guideline_v1.1_calibrated.md` (đã có khung): copy v1.0 rồi thêm quy tắc mới
-- [ ] `python scripts/prepare_calibration.py` → trên CVAT sửa các ảnh bị cờ → export ra `submission/qc/labels_calibrated_flagged.json`
-- [ ] Chạy `python scripts/build_final.py` lần nữa để ra `labels_calibrated.json/.csv`
+- [ ] `python scripts/build_final.py` để sinh `calibration_decisions.csv`
+- [ ] Mỗi ca một dòng: `quyet_dinh`, `quy_tac_ghi_vao_guideline` (R-xx), `phien_ban_guideline`, `nguoi_chot` (mã), `phieu_sua`, `kiem_lai`, `pham_vi` (`anh`/`lo`)
+- [ ] Viết `guideline_v1.1_calibrated.md` + `submission/guideline_change.json` (`kind`: `editorial` hoặc `semantic`)
+- [ ] Nếu đổi taxonomy: `submission/taxonomy_v1.1.json` rồi `python scripts/make_cvat_labels.py --final`
+- [ ] `python scripts/prepare_calibration.py` → sửa trên CVAT → lưu COCO đúng đường dẫn lệnh in ra
+- [ ] `python scripts/build_final.py` lần nữa → `labels_calibrated.json/.csv`, `batch_manifest.json`
 
-## Pha 6 · QC và nộp bài
-- [ ] `python scripts/qc_sample.py --n 20 --seed 42`
-- [ ] Điền `submission/qc/qc_review.csv`: mỗi lỗi một dòng, ảnh không có lỗi ghi `khong`. Người kiểm nên là người ít gán ảnh đó nhất
-- [ ] `python scripts/qc_report.py`
-- [ ] Điền đủ 7 mục `submission/qc/QC_REPORT.md` (đã có khung):
-  - [ ] Tỉ lệ lỗi theo ảnh và theo vật, kèm mẫu số
-  - [ ] Top 3 loại lỗi, mỗi loại có ảnh ví dụ
-  - [ ] Quyết định theo cây Hold → Rework → Release
-- [ ] Ghi chú cá nhân `submission/individual_notes/<MSHV>_<HoTen>.md` (mẫu: `docs/INDIVIDUAL_NOTE_TEMPLATE.md`)
-  - [ ] 2A202603191 (đã có khung, nhớ điền mục 5 "Dùng AI" trung thực)
-  - [ ] 2A202603103
-  - [ ] 2A202603201
-  - [ ] 2A202603245
-  - [ ] 2A202603101
-- [ ] `TEAM.md`: điền "Kết quả tóm tắt" và hash commit chốt bài
-- [ ] `python scripts/check_submission.py` không còn `LỖI`
-- [ ] Kiểm tra: cả 5 người đều có commit; không commit thư mục `work/`
-- [ ] Push, nộp link repo lên LMS trước hạn
+## Pha 6 · QC và bàn giao
+- [ ] `python scripts/qc_sample.py --round 1` (mặc định duyệt **cả lô**)
+- [ ] Mở `work/review/round-01/`, điền `submission/qc/reviews/round-01/qc_review.csv` (người kiểm khác người sửa)
+- [ ] `python scripts/qc_report.py --round 1`
+- [ ] Nếu **Rework**: sửa, làm lại Pha 5 cho phạm vi cần sửa, chạy `--round 2` (giữ vòng 1)
+- [ ] Điền `submission/qc/QC_REPORT.md` (khung đã có, giữ nguyên tên các trường)
+- [ ] Ghi chú cá nhân `submission/individual_notes/<mã>.md`
+  - [ ] 191 (đã có khung, điền mục "Dùng AI" trung thực)
+  - [ ] 101 (đã có)
+  - [ ] 103
+  - [ ] 201
+  - [ ] 245
+- [ ] `TEAM.md`: điền "Kết quả tóm tắt"
+- [ ] `python scripts/check_submission.py --round 1` không còn `LỖI`
+- [ ] Nhờ một người ngoài nhóm lần theo một ca từ báo cáo tới ảnh, quy tắc và nhãn
+- [ ] Nộp theo kênh coach (repo riêng tư hoặc gói nén), ghi commit chốt bài
