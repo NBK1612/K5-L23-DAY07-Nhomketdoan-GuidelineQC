@@ -12,12 +12,12 @@
 - [ ] Mời 4 bạn làm collaborator; mỗi người đặt `git config user.name/email` đúng tài khoản GitHub
 
 ## Pha 1 · Guideline cá nhân (độc lập, không xem bài nhau)
-- [x] 03191 - Nguyễn Bảo Khánh: viết guideline
-- [ ] 03191 - Nguyễn Bảo Khánh: commit + push
-- [ ] 03103 - Lê Ngọc Dũng: `guideline_03103_LeNgocDung.md`
-- [ ] 03201 - Bùi Quang Huy: `guideline_03201_BuiQuangHuy.md`
-- [ ] 03245 - Nguyễn Sỹ Kiên: `guideline_03245_NguyenSyKien.md`
-- [ ] 03101 - Nguyễn Xuân Anh: `guideline_03101_NguyenXuanAnh.md`
+- [x] 2A202603191 - Nguyễn Bảo Khánh: viết guideline
+- [x] 2A202603191 - Nguyễn Bảo Khánh: commit + push
+- [ ] 2A202603103 - Lê Ngọc Dũng: `guideline_2A202603103_LeNgocDung.md`
+- [ ] 2A202603201 - Bùi Quang Huy: `guideline_2A202603201_BuiQuangHuy.md`
+- [ ] 2A202603245 - Nguyễn Sỹ Kiên: `guideline_2A202603245_NguyenSyKien.md`
+- [ ] 2A202603101 - Nguyễn Xuân Anh: `guideline_2A202603101_NguyenXuanAnh.md`
 
 Mỗi file nằm ở `submission/guidelines/individual/` và do chính người đó commit.
 
@@ -34,16 +34,16 @@ Mỗi file nằm ở `submission/guidelines/individual/` và do chính người 
 - [ ] `python scripts/make_cvat_labels.py`
 
 ## Pha 3 · Chia ảnh và gán nhãn (độc lập, không dùng AI)
-- [x] Một người chạy (03191 đã chạy, mỗi người 24 ảnh) — [ ] commit `submission/qc/`:
-  `python scripts/split_assign.py --members 03191,03103,03201,03245,03101 --copy-images`
+- [x] Một người chạy (2A202603191 đã chạy, mỗi người 24 ảnh) — [x] commit `submission/qc/`:
+  `python scripts/split_assign.py --members 2A202603191,2A202603103,2A202603201,2A202603245,2A202603101 --copy-images`
 - [ ] Mỗi người tạo Project trên CVAT bằng `cvat/labels_generated.json`, upload **đúng** ảnh trong `submission/qc/assignments/<MSHV>.txt`
 - [ ] Gán theo v1.0; ca chưa chắc thì tick `can_review`
 - [ ] Export COCO 1.0 → `submission/labels/<MSHV>_<HoTen>.json`
-  - [ ] 03191_NguyenBaoKhanh.json
-  - [ ] 03103_LeNgocDung.json
-  - [ ] 03201_BuiQuangHuy.json
-  - [ ] 03245_NguyenSyKien.json
-  - [ ] 03101_NguyenXuanAnh.json
+  - [ ] 2A202603191_NguyenBaoKhanh.json
+  - [ ] 2A202603103_LeNgocDung.json
+  - [ ] 2A202603201_BuiQuangHuy.json
+  - [ ] 2A202603245_NguyenSyKien.json
+  - [ ] 2A202603101_NguyenXuanAnh.json
 - [ ] `python scripts/validate_labels.py --all` sạch, rồi mỗi người tự commit
 
 ## Pha 4 · Đo IAA
@@ -68,11 +68,11 @@ Mỗi file nằm ở `submission/guidelines/individual/` và do chính người 
   - [ ] Top 3 loại lỗi, mỗi loại có ảnh ví dụ
   - [ ] Quyết định theo cây Hold → Rework → Release
 - [ ] Ghi chú cá nhân `submission/individual_notes/<MSHV>_<HoTen>.md` (mẫu: `docs/INDIVIDUAL_NOTE_TEMPLATE.md`)
-  - [ ] 03191 (đã có khung, nhớ điền mục 5 "Dùng AI" trung thực)
-  - [ ] 03103
-  - [ ] 03201
-  - [ ] 03245
-  - [ ] 03101
+  - [ ] 2A202603191 (đã có khung, nhớ điền mục 5 "Dùng AI" trung thực)
+  - [ ] 2A202603103
+  - [ ] 2A202603201
+  - [ ] 2A202603245
+  - [ ] 2A202603101
 - [ ] `TEAM.md`: điền "Kết quả tóm tắt" và hash commit chốt bài
 - [ ] `python scripts/check_submission.py` không còn `LỖI`
 - [ ] Kiểm tra: cả 5 người đều có commit; không commit thư mục `work/`

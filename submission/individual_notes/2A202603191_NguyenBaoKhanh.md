@@ -1,4 +1,4 @@
-# Ghi chú cá nhân — 03191 - Nguyễn Bảo Khánh
+# Ghi chú cá nhân — 2A202603191 - Nguyễn Bảo Khánh
 
 ## 1. Pha 1: ba ca khó tôi tìm ra trong 40 ảnh
 | Ảnh | v0 không trả lời được gì | Quyết định ban đầu của tôi |

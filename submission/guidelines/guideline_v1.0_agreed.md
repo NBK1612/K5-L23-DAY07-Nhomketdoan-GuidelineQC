@@ -2,7 +2,7 @@
 
 - Phiên bản: v1.0
 - Ngày: <<YYYY-MM-DD>>
-- Người viết / duyệt: 03191 - Nguyễn Bảo Khánh, 03103 - Lê Ngọc Dũng, 03201 - Bùi Quang Huy, 03245 - Nguyễn Sỹ Kiên, 03101 - Nguyễn Xuân Anh
+- Người viết / duyệt: 2A202603191 - Nguyễn Bảo Khánh, 2A202603103 - Lê Ngọc Dũng, 2A202603201 - Bùi Quang Huy, 2A202603245 - Nguyễn Sỹ Kiên, 2A202603101 - Nguyễn Xuân Anh
 - Loại nhãn: bounding box, CVAT, xuất COCO 1.0
 - Taxonomy đi kèm: `submission/taxonomy.json` (version `v1.0`)
 
@@ -14,7 +14,7 @@
 
 | # | Vấn đề | Các phương án trong bản cá nhân (của ai) | Nhóm chốt | Lý do | Ảnh |
 |---|---|---|---|---|---|
-| 1 | <<ví dụ: có thêm lớp bicycle / three_wheeler / bus không>> | <<03191: thêm; 03xxx: ...>> | <<>> | <<>> | <<img_0xx>> |
+| 1 | <<ví dụ: có thêm lớp bicycle / three_wheeler / bus không>> | <<2A202603191: thêm; 03xxx: ...>> | <<>> | <<>> | <<img_0xx>> |
 | 2 | | | | | |
 | 3 | | | | | |
 

@@ -8,7 +8,7 @@
 |---|---|
 | Tên lô | day07-street-40 |
 | Số ảnh | 40 |
-| Thành viên (MSHV) | 03191, 03103, 03201, 03245, 03101 |
+| Thành viên (MSHV) | 2A202603191, 2A202603103, 2A202603201, 2A202603245, 2A202603101 |
 | Số lần gán mỗi ảnh (K) | 3 |
 | Phiên bản guideline lúc gán | v1.0 |
 | Phiên bản guideline hiện tại | v1.1 |
@@ -59,6 +59,7 @@ Có **lỗi lặp lại cùng một kiểu** không? <<có/không, kiểu nào>>
 ## 6. Script kiểm được gì, không kiểm được gì
 
 - Script đã kiểm: <<tên lớp, giá trị thuộc tính, box trong ảnh, ...>>
+- Sửa script: `scripts/validate_labels.py` dòng 20, regex tên file nhãn đổi từ `^(\d+)_` thành `^([A-Za-z0-9]+)_` vì MSHV của nhóm có dạng `2A2026xxxxx` (có chữ), bản gốc chỉ nhận MSHV toàn số. Không đổi logic kiểm khác.
 - Script **không** kiểm được, và nhóm đã dùng mắt người ra sao: <<box ôm sát? cả nhóm cùng bỏ sót? cùng hiểu sai?>>
 
 ## 7. Quyết định

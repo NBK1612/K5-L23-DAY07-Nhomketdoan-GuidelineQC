@@ -1,4 +1,4 @@
-# Day 07 Lab — Nhóm G-05_t-004_Nhóm kết đoàn: 03191 - Nguyễn Bảo Khánh, 03103 - Lê Ngọc Dũng, 03201 - Bùi Quang Huy, 03245 - Nguyễn Sỹ Kiên, 03101 - Nguyễn Xuân Anh
+# Day 07 Lab — Nhóm G-05_t-004_Nhóm kết đoàn: 2A202603191 - Nguyễn Bảo Khánh, 2A202603103 - Lê Ngọc Dũng, 2A202603201 - Bùi Quang Huy, 2A202603245 - Nguyễn Sỹ Kiên, 2A202603101 - Nguyễn Xuân Anh
 
 **Nhóm 2–5 người · 4 giờ · 40 ảnh đường phố châu Á · gán box bằng CVAT**
 

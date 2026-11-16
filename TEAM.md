@@ -7,11 +7,11 @@
 
 | STT | MSHV | Họ và tên | Lớp (L2 / L3 / khác) | Tài khoản GitHub |
 |---|---|---|---|---|
-| 1 | 03191 | Nguyễn Bảo Khánh | L2 | |
-| 2 | 03103 | Lê Ngọc Dũng | L2 | |
-| 3 | 03201 | Bùi Quang Huy | L2 | |
-| 4 | 03245 | Nguyễn Sỹ Kiên | L2 | |
-| 5 | 03101 | Nguyễn Xuân Anh | L2 | |
+| 1 | 2A202603191 | Nguyễn Bảo Khánh | L2 | |
+| 2 | 2A202603103 | Lê Ngọc Dũng | L2 | |
+| 3 | 2A202603201 | Bùi Quang Huy | L2 | |
+| 4 | 2A202603245 | Nguyễn Sỹ Kiên | L2 | |
+| 5 | 2A202603101 | Nguyễn Xuân Anh | L2 | |
 
 Danh sách trên phải khớp dòng tiêu đề của `README.md` (đã đổi theo [SUBMISSION.md](SUBMISSION.md)) và `--members` đã dùng ở `scripts/split_assign.py`.
 
@@ -19,11 +19,11 @@ Danh sách trên phải khớp dòng tiêu đề của `README.md` (đã đổi 
 
 | MSHV | Phụ trách thêm |
 |---|---|
-| 03191 | |
-| 03103 | |
-| 03201 | |
-| 03245 | |
-| 03101 | |
+| 2A202603191 | |
+| 2A202603103 | |
+| 2A202603201 | |
+| 2A202603245 | |
+| 2A202603101 | |
 
 ## Kết quả tóm tắt (điền cuối bài)
 
