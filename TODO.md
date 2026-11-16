@@ -14,7 +14,7 @@
 ## Pha 1 · Guideline cá nhân (độc lập, không xem bài nhau)
 - [x] 2A202603191 - Nguyễn Bảo Khánh: viết guideline
 - [x] 2A202603191 - Nguyễn Bảo Khánh: commit + push
-- [ ] 2A202603103 - Lê Ngọc Dũng: `guideline_2A202603103_LeNgocDung.md`
+- [x] 2A202603103 - Lê Ngọc Dũng: `guideline_2A202603103_LeNgocDung.md`
 - [ ] 2A202603201 - Bùi Quang Huy: `guideline_2A202603201_BuiQuangHuy.md`
 - [ ] 2A202603245 - Nguyễn Sỹ Kiên: `guideline_2A202603245_NguyenSyKien.md`
 - [ ] 2A202603101 - Nguyễn Xuân Anh: `guideline_2A202603101_NguyenXuanAnh.md`
