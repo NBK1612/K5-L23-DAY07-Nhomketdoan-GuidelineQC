@@ -28,6 +28,19 @@
 
 **Tôi đồng ý / chưa đồng ý vì sao:** Chưa thể ghi nhận khi chưa có quyết định nhóm. Khi thảo luận xong, tôi sẽ ghi quyết định cuối, người xác nhận và lý do thay vì chỉ ghi “nhóm đã thống nhất”.
 
+### Kết quả nhóm chốt (cập nhật sau họp Pha 2)
+
+So bản cá nhân với kết quả nhóm chốt trong `guideline_v1.0_agreed.md` (mục 0). Cả nhóm đã thống nhất các điểm dưới trong họp Pha 2.
+
+| # (mục 0 v1.0) | Vấn đề | Đề xuất ban đầu của tôi | Nhóm chốt (v1.0) | Tôi đồng ý? Vì sao |
+|---|---|---|---|---|
+| #4 | Ngưỡng `occluded_level` | 0 / <30 / 30–70 / ≥70 | <10 / 10–<40 / 40–<70 / ≥70 | Đồng ý; dùng mốc chung trùng nhiều bản nhất để cả nhóm đo giống nhau |
+| #8 | Người trong cabin kín | Gán nếu thấy rõ qua kính | Không gán người sau kính; xe hở vẫn gán | Đồng ý; người sau kính khó vẽ box nhất quán, xe hở vẫn gán người |
+| #10 | Predator img_011 | Không gán hình nhân vật | Không gán (tượng) | Đồng ý; Predator lớn hơn người thật, đứng yên như vật trưng bày nên coi là tượng |
+| #11, #12 | Xe máy kim loại img_011, xe vàng img_024 | Ghi ca cần họp / review | Gán lớp xe + `drivable=no` | Đồng ý; dùng `drivable=no` ghi nhận xe không chạy được, tránh tranh luận thật/giả |
+| #15 | Bia mộ img_027 | Không gán | `truck` + `drivable=no` (R-14) | Đồng ý; vật hình xe cỡ thật vẫn có ích nếu đánh `drivable=no` để lọc khi huấn luyện |
+| #16 | Hàng chất trên xe (img_001, img_012, img_035) | Box chỉ bao thân xe | Box bao cả hàng chất cố định (R-09) | Đồng ý; đa số 4/5, hàng chất cố định là kích thước xe chiếm trên đường |
+
 ## 3. Pha 3: ảnh tôi đã gán
 
 - **Số ảnh được giao:** Chưa cập nhật.

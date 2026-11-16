@@ -8,7 +8,17 @@
 | `img_028.jpg` / `img_029.jpg` | Xe bán tải cõng tượng con ngựa lớn trên thùng (`img_028`), xe máy chở bó ống thép siêu dài vươn ra 5 mét (`img_029`): v0 không nói rõ box xe ôm sát thân xe hay bao trùm toàn bộ vật cồng kềnh nhô ra. | Quyết định tạm thời gán `truck` bao quanh xe bán tải (`img_028`) và gán `motorcycle` ôm thân xe máy (`img_029`), đánh dấu **`can_review = true`** để đưa ra họp Pha 2 thống nhất quy tắc viền box cho hàng siêu trường siêu trọng. |
 
 ## 2. Pha 2: chỗ tôi bất đồng với nhóm
-(Sẽ cập nhật sau phiên họp thống nhất Pha 2)
+
+So bản cá nhân với kết quả nhóm chốt trong `guideline_v1.0_agreed.md` (mục 0). Cả nhóm đã thống nhất các điểm dưới trong họp Pha 2.
+
+| # (mục 0 v1.0) | Vấn đề | Đề xuất ban đầu của tôi | Nhóm chốt (v1.0) | Tôi đồng ý? Vì sao |
+|---|---|---|---|---|
+| #4 | Ngưỡng `occluded_level` | <10 / 10–35 / 35–70 / ≥70 | <10 / 10–<40 / 40–<70 / ≥70 | Đồng ý; dùng mốc chung trùng nhiều bản nhất để cả nhóm đo giống nhau |
+| #6 | Tủ đồ chơi img_038 | Một `ignore_region` bao tủ | Không gán, không ignore | Đồng ý; đồ chơi thu nhỏ là mẫu âm và phần lớn < 20 px |
+| #9 | Tượng ngựa img_028 | `can_review` | Box `truck` chỉ bao thân xe | Đồng ý; tượng là vật trang trí, không phải hàng chở |
+| #10 | Predator img_011 | `person` + `can_review` | Không gán (tượng) | Đồng ý; Predator lớn hơn người thật, đứng yên như vật trưng bày nên coi là tượng |
+| #12, #15 | Xe vàng img_024 | `can_review` | `car` + `drivable=no` | Đồng ý; dùng `drivable=no` ghi nhận xe không chạy được, tránh tranh luận thật/giả |
+| #15 | Bia mộ img_027 | Không gán | `truck` + `drivable=no` (R-14) | Đồng ý; vật hình xe cỡ thật vẫn có ích nếu đánh `drivable=no` để lọc khi huấn luyện |
 
 ## 3. Pha 3: ảnh tôi đã gán
 (Sẽ cập nhật sau khi hoàn thành gán nhãn 24 ảnh trên CVAT theo phân công)
