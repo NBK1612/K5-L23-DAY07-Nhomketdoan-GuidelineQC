@@ -1,15 +1,17 @@
 # Thông tin nhóm
 
-- Tên nhóm:
+- Tên nhóm: G-05_t-004_Nhóm kết đoàn
 - Repo bài nộp (URL):
 - Commit chốt bài (hash):
-- Số thành viên: …  → số người gán mỗi ảnh (K): …
+- Số thành viên: 5  → số người gán mỗi ảnh (K): 3
 
 | STT | MSHV | Họ và tên | Lớp (L2 / L3 / khác) | Tài khoản GitHub |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| 1 | 03191 | Nguyễn Bảo Khánh | L2 | |
+| 2 | 03103 | Lê Ngọc Dũng | L2 | |
+| 3 | 03201 | Bùi Quang Huy | L2 | |
+| 4 | 03245 | Nguyễn Sỹ Kiên | L2 | |
+| 5 | 03101 | Nguyễn Xuân Anh | L2 | |
 
 Danh sách trên phải khớp dòng tiêu đề của `README.md` (đã đổi theo [SUBMISSION.md](SUBMISSION.md)) và `--members` đã dùng ở `scripts/split_assign.py`.
 
@@ -17,7 +19,11 @@ Danh sách trên phải khớp dòng tiêu đề của `README.md` (đã đổi 
 
 | MSHV | Phụ trách thêm |
 |---|---|
-| | (ví dụ: chạy split_assign, viết phần ca khó của guideline v1.0, người kiểm QC chính, ...) |
+| 03191 | |
+| 03103 | |
+| 03201 | |
+| 03245 | |
+| 03101 | |
 
 ## Kết quả tóm tắt (điền cuối bài)
 
