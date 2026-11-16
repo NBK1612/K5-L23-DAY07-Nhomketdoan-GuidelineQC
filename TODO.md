@@ -17,7 +17,7 @@
 - [ ] 2A202603103 - Lê Ngọc Dũng: `guideline_2A202603103_LeNgocDung.md`
 - [ ] 2A202603201 - Bùi Quang Huy: `guideline_2A202603201_BuiQuangHuy.md`
 - [ ] 2A202603245 - Nguyễn Sỹ Kiên: `guideline_2A202603245_NguyenSyKien.md`
-- [ ] 2A202603101 - Nguyễn Xuân Anh: `guideline_2A202603101_NguyenXuanAnh.md`
+- [x] 2A202603101 - Nguyễn Xuân Anh: `guideline_2A202603101_NguyenXuanAnh.md`
 
 Mỗi file nằm ở `submission/guidelines/individual/` và do chính người đó commit.
 
