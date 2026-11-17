@@ -67,8 +67,6 @@ So bản cá nhân với kết quả nhóm chốt trong `guideline_v1.0_agreed.m
 - **Kiểm tra kết quả:** Tôi đối chiếu các ca và ID ảnh với template; giữ các quyết định chưa được nhóm xác nhận ở trạng thái **đề xuất**; không điền số lượng box, mức đồng thuận hay quyết định Release/Hold/Rework khi chưa có dữ liệu.
 - **Ranh giới sử dụng:** AI hỗ trợ viết và rà soát tài liệu; không thay thế thao tác gán nhãn thực tế, quyết định nhóm hay kiểm tra từng ảnh.
 
-**Lưu ý khi nộp:** Chỉnh mục này theo đúng công cụ và cách kiểm tra mà chính tôi thực sự đã dùng.
-
 ## 6. Bài học
 
 Điều tôi sẽ làm khác khi viết guideline lần sau: **viết quy tắc quyết định cho các ca biên ngay từ đầu, kèm ví dụ dương/âm, rồi cho ít nhất hai người gán độc lập một tập ảnh mẫu trước khi triển khai toàn bộ.**
