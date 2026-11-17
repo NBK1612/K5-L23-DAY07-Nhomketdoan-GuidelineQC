@@ -39,7 +39,7 @@ So bản cá nhân với kết quả nhóm chốt trong `guideline_v1.0_agreed.m
 - Ảnh tôi lệch nhiều nhất: img_021.jpg (92 ca), img_032.jpg (91 ca), img_011.jpg (66 ca).
 - Nguyên nhân:
   - lệch `occluded_level` (197 ca) và bất đồng vùng ignore (108 ca): **guideline mơ hồ**, cả nhóm cùng lệch vì ước lượng % che và ranh giới vùng dày bằng mắt; v1.1 thêm R-15 để chốt cách ước lượng
-  - lệch `drivable` (88 ca): **tôi chưa nắm quy tắc**, đặt `drivable=no` cho box `person` trong khi mục 2.2 quy định `person` luôn `yes`; v1.1 thêm R-17
+  - lệch `drivable` (88 ca): **tôi chưa nắm quy tắc**, đặt `drivable=no` cho 133/135 box `person` trong khi mục 2.2 quy định `person` luôn `yes`; v1.1 thêm R-17
   - bỏ sót/thừa (143 ca) và IoU thấp (140 ca): mỗi người dừng vẽ ở ngưỡng vật nhỏ khác nhau và ôm box chưa đều (R-01, R-03)
 - Quyết định calibration quan trọng nhất với tôi: R-17 (`person` luôn `drivable=yes`), vì lỗi này đến từ cách tôi hiểu quy tắc.
 
@@ -49,4 +49,4 @@ So bản cá nhân với kết quả nhóm chốt trong `guideline_v1.0_agreed.m
 
 ## 6. Bài học
 
-- Một điều tôi sẽ làm khác khi viết guideline lần sau: ghi rõ thuộc tính nào áp cho lớp nào ngay trong bảng thuộc tính, kèm giá trị mặc định. Tôi đặt `drivable=no` cho 88 box `person` vì hiểu sai phạm vi của `drivable`; nếu guideline có dòng "`person`: luôn để mặc định" ngay cạnh định nghĩa thuộc tính thì đã tránh được.
+- Một điều tôi sẽ làm khác khi viết guideline lần sau: ghi rõ thuộc tính nào áp cho lớp nào ngay trong bảng thuộc tính, kèm giá trị mặc định. Tôi đặt `drivable=no` cho 133 box `person` (88 ca lệch) vì hiểu sai phạm vi của `drivable`; nếu guideline có dòng "`person`: luôn để mặc định" ngay cạnh định nghĩa thuộc tính thì đã tránh được.
