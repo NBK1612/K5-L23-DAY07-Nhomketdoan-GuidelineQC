@@ -2,9 +2,7 @@
 
 - **Ngày:** 16/11/2026
 - **Bài thực hành:** Viết lại guideline và gán Bounding Box trên CVAT — 40 ảnh đường phố châu Á
-- **Trạng thái:** Bản ghi chú cá nhân chuẩn bị / cần cập nhật sau thực hành
-
-> **Lưu ý về tính xác thực:** Tôi viết phần nhận định và đề xuất ban đầu dựa trên đề bài và các ca trong template được cung cấp. Những số liệu, bất đồng, kết quả calibration và việc dùng công cụ thực tế **chưa được cung cấp**, nên tôi ghi rõ là chưa xác nhận. Trước khi nộp, tôi sẽ thay nội dung này bằng ghi nhận của chính mình. Các ID ảnh dưới đây là ID nêu trong template, cần kiểm tra lại trong bộ ảnh được giao.
+- **Trạng thái:** Đã có file nhãn cá nhân và đã kiểm tra cấu trúc; nội dung IAA/calibration chờ đối chiếu nguồn.
 
 ## 1. Pha 1: ba ca khó tôi tìm ra trong 40 ảnh
 
@@ -18,34 +16,43 @@
 
 ## 2. Pha 2: chỗ tôi bất đồng với nhóm
 
-**Chưa có biên bản thảo luận nhóm.** Đây là ba điểm tôi sẽ đưa ra để so sánh quan điểm trong buổi thống nhất guideline:
-
-| Chủ đề cần đối chiếu | Quan điểm ban đầu của tôi | Câu hỏi nhóm phải chốt | Kết quả thực tế |
+| Vấn đề | Quan điểm ban đầu của tôi | Nhóm chốt | Tôi đồng ý vì |
 |---|---|---|---|
-| Tuk-tuk | Ưu tiên class riêng nếu được phê duyệt; không ép vào class khác khi thiếu quy tắc. | Có cho bổ sung `three_wheeler` không? Nếu không, ánh xạ vào class nào hay bỏ qua? | Nhóm chốt `three_wheeler` gồm tuk-tuk, auto-rickshaw, xích lô (v1.0, quyết định #1, #2) |
-| Xe chở ô tô | Phân biệt phương tiện chở và từng xe được chở; gán riêng nếu hợp lệ. | Quy tắc xe chuyên chở, rơ-moóc, mức độ nhìn thấy tối thiểu và box phần bị che là gì? | Một box `truck` cho đầu kéo + rơ-moóc, mỗi ô tô được chở một box `car` (R-08) |
-| Tượng / ma-nơ-canh | Không gán như người hay xe thật. | Các bản sao, tượng, đồ chơi, hình in, phản chiếu có bị loại trừ hết không? | Tượng người, ma-nơ-canh, hình in, phản chiếu không gán (R-05, R-06); vật hình xe không chạy được, kể cả đồ chơi, gán lớp xe + `drivable=no` (R-14) |
+| Mức che khuất | `0`: không che; `1`: trên 0–<30%; `2`: 30–<70%; `3`: ≥70%. | <10% / 10–<40% / 40–<70% / ≥70%. | Có mốc chung để mọi người áp dụng thống nhất. |
+| Người trong cabin kín | Gán nếu nhìn thấy đủ rõ qua kính. | Không gán người chỉ thấy qua kính xe kín; khoang hở theo R-11. | Box người sau kính khó xác định nhất quán. |
+| Predator `img_011` | Không gán hình nhân vật. | Không gán, coi là tượng. | Tuân theo quyết định riêng của nhóm cho ca này. |
+| Xe điêu khắc `img_011`, xe vàng `img_024` | Để ca cần họp/review. | Gán lớp xe và `drivable=no`; xe điêu khắc `img_011` còn cần `can_review`. | Ghi nhận vật hình xe theo phạm vi nhóm đã chọn, phân biệt bằng thuộc tính. |
+| Bia mộ hình pickup `img_027` | Không gán. | `truck`, `drivable=no`, theo R-14. | Cần áp dụng nhất quán quy tắc vật hình xe cỡ thật của nhóm. |
+| Hàng chất cố định trên xe | Box chỉ bao thân xe. | Bao cả hàng cố định theo R-09; không bao ống do người cầm ở `img_029`. | Ranh giới box phản ánh kích thước xe và khối hàng chiếm trên đường. |
 
-**Tôi đồng ý / chưa đồng ý vì sao:** Đồng ý các kết quả trên; chi tiết từng điểm ở bảng "Kết quả nhóm chốt" bên dưới. Khi thảo luận xong, tôi sẽ ghi quyết định cuối, người xác nhận và lý do thay vì chỉ ghi “nhóm đã thống nhất”.
+Khi gán Pha 3, tôi cần theo bản nhóm đã khóa, không tiếp tục dùng các đề xuất cá nhân đã bị thay thế.
 
-### Kết quả nhóm chốt (cập nhật sau họp Pha 2)
-
-So bản cá nhân với kết quả nhóm chốt trong `guideline_v1.0_agreed.md` (mục 0). Cả nhóm đã thống nhất các điểm dưới trong họp Pha 2.
-
-| # (mục 0 v1.0) | Vấn đề | Đề xuất ban đầu của tôi | Nhóm chốt (v1.0) | Tôi đồng ý? Vì sao |
-|---|---|---|---|---|
-| #4 | Ngưỡng `occluded_level` | 0 / <30 / 30–70 / ≥70 | <10 / 10–<40 / 40–<70 / ≥70 | Đồng ý; dùng mốc chung trùng nhiều bản nhất để cả nhóm đo giống nhau |
-| #8 | Người trong cabin kín | Gán nếu thấy rõ qua kính | Không gán người sau kính; xe hở vẫn gán | Đồng ý; người sau kính khó vẽ box nhất quán, xe hở vẫn gán người |
-| #10 | Predator img_011 | Không gán hình nhân vật | Không gán (tượng) | Đồng ý; Predator lớn hơn người thật, đứng yên như vật trưng bày nên coi là tượng |
-| #11, #12 | Xe máy kim loại img_011, xe vàng img_024 | Ghi ca cần họp / review | Gán lớp xe + `drivable=no` | Đồng ý; dùng `drivable=no` ghi nhận xe không chạy được, tránh tranh luận thật/giả |
-| #15 | Bia mộ img_027 | Không gán | `truck` + `drivable=no` (R-14) | Đồng ý; vật hình xe cỡ thật vẫn có ích nếu đánh `drivable=no` để lọc khi huấn luyện |
-| #16 | Hàng chất trên xe (img_001, img_012, img_035) | Box chỉ bao thân xe | Box bao cả hàng chất cố định (R-09) | Đồng ý; đa số 4/5, hàng chất cố định là kích thước xe chiếm trên đường |
 
 ## 3. Pha 3: ảnh tôi đã gán
+Số liệu đối chiếu trực tiếp từ `submission/labels/2A202603103_LeNgocDung.json`:
 
-- Số ảnh được giao: **24** (`submission/qc/assignments/2A202603103.txt`); file nhãn `submission/labels/2A202603103_LeNgocDung.json`, `validate_labels.py` báo hợp lệ, đủ 24 ảnh.
-- Số box đã vẽ: **260** (person 115, motorcycle 65, car 41, ignore_region 11, bus 9, bicycle 8, truck 6, three_wheeler 5) · Số lần tick `can_review`: **3**
-- Ca lưỡng lự nhất khi gán: **img_013.jpg** (ảnh tôi tick `can_review` nhiều nhất: 2 box).
+- **24 ảnh**, đúng danh sách được phân công.
+- **260 annotation dạng box:** 249 box đối tượng và 11 vùng `ignore_region`.
+- **3 box đang bật `can_review`:** hai box `bus` ở `img_013` — ID COCO 117, 118; một box `person` sát mép trái ở `img_029` — ID 186.
+- Đây là số cờ còn bật trong bản xuất hiện tại, không phải tổng số lần tôi đã bấm review.
+
+| Ảnh | Minh chứng trong file nhãn |
+|---|---|
+| `img_004` | 2 box `three_wheeler` và 2 box `person`, tách người với xe. |
+| `img_027` | 1 box `truck`, `drivable=no`, khác quan điểm ban đầu không gán. |
+| `img_035` | Có 13 box; box `three_wheeler` bao cả khối hàng, cao khoảng 383 px. |
+| `img_013` | Hai box `bus` cao khoảng 26 px đang bật review; cần kiểm lại lớp trong cảnh tối. |
+
+**Các điểm còn cần rà:** `img_029` chưa có box lớp `bicycle` dù ảnh có xe đạp; cần xác định bỏ sót hay chọn nhầm lớp. `img_011` có ba box `motorcycle`, hai box `drivable=no`, một box `drivable=yes`, cả ba chưa bật review; cần đối chiếu từng box với quyết định nhóm.
+
+Ngày 17/11/2026, chạy:
+
+```powershell
+python scripts/validate_labels.py submission/labels/2A202603103_LeNgocDung.json
+```
+
+Kết quả: **hợp lệ về cấu trúc, 24 ảnh, không có cảnh báo**. Kết quả này chưa xác nhận mọi box đúng vật, ôm sát hoặc không bỏ sót. ID COCO có thể khác ID trên CVAT.
+
 
 ## 4. Pha 4–5: tôi lệch ở đâu
 
@@ -66,6 +73,7 @@ So bản cá nhân với kết quả nhóm chốt trong `guideline_v1.0_agreed.m
 - **Mục đích:** Đọc cấu trúc template, hệ thống hóa ba ca khó, diễn đạt quyết định ban đầu dưới dạng kiểm tra được và lập danh sách các bằng chứng cần ghi sau khi thực hành.
 - **Kiểm tra kết quả:** Tôi đối chiếu các ca và ID ảnh với template; giữ các quyết định chưa được nhóm xác nhận ở trạng thái **đề xuất**; không điền số lượng box, mức đồng thuận hay quyết định Release/Hold/Rework khi chưa có dữ liệu.
 - **Ranh giới sử dụng:** AI hỗ trợ viết và rà soát tài liệu; không thay thế thao tác gán nhãn thực tế, quyết định nhóm hay kiểm tra từng ảnh.
+- **Tự kiểm tra:** Tôi đọc kỹ lại báo cáo và bổ sung, xoá, chỉnh sửa những nội dung AI viết chưa đúng ý và chưa rõ ràng. Tổng quan lại lần nữa và hoàn thiện
 
 ## 6. Bài học
 
